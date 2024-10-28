@@ -19,20 +19,28 @@ namespace FundamentosOctubreNetCore
 
         private void btnEvaluarNumero_Click(object sender, EventArgs e)
         {
-            //CAPTURAMOS EL NUMERO DE LA CAJA DE TEXTO
-            int numero = int.Parse(this.txtNumero.Text);
-            //DEBEMOS PREGUNTAS POR LAS DIFERENTES OPCIONES QUE 
-            //TENEMOS EN EL PROGRAMA: POSITIVO, NEGATIVO O CERO
-            if (numero > 0)
+            if (this.txtNumero.Text != "")
             {
-                this.lblResultado.Text = "POSITIVO";
-            }
-            else if (numero < 0) {
-                this.lblResultado.Text = "NEGATIVO";
+                //CAPTURAMOS EL NUMERO DE LA CAJA DE TEXTO
+                int numero = int.Parse(this.txtNumero.Text);
+                //DEBEMOS PREGUNTAS POR LAS DIFERENTES OPCIONES QUE 
+                //TENEMOS EN EL PROGRAMA: POSITIVO, NEGATIVO O CERO
+                if (numero > 0)
+                {
+                    this.lblResultado.Text = "POSITIVO";
+                }
+                else if (numero < 0)
+                {
+                    this.lblResultado.Text = "NEGATIVO";
+                }
+                else
+                {
+                    this.lblResultado.Text = "CERO";
+                }
             }
             else
             {
-                this.lblResultado.Text = "CERO";
+                MessageBox.Show("Debe escribir un número");
             }
         }
     }
