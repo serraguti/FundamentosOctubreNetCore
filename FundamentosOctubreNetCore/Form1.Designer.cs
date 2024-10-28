@@ -39,12 +39,14 @@
             pictureBox1 = new PictureBox();
             button2 = new Button();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(304, 116);
+            button1.Location = new Point(277, 40);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -65,14 +67,14 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(362, 304);
+            listBox1.Location = new Point(384, 244);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(120, 94);
             listBox1.TabIndex = 2;
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(501, 80);
+            monthCalendar1.Location = new Point(29, 208);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
             // 
@@ -83,7 +85,7 @@
             // 
             // treeView1
             // 
-            treeView1.Location = new Point(89, 199);
+            treeView1.Location = new Point(638, 85);
             treeView1.Name = "treeView1";
             treeView1.Size = new Size(121, 97);
             treeView1.TabIndex = 4;
@@ -101,7 +103,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(110, 39);
+            pictureBox1.Location = new Point(80, 13);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 50);
             pictureBox1.TabIndex = 6;
@@ -109,7 +111,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(105, 141);
+            button2.Location = new Point(146, 85);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 7;
@@ -125,11 +127,33 @@
             label1.TabIndex = 8;
             label1.Text = "label1";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(277, 398);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 9;
+            label2.Text = "label2";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(255, 255, 128);
+            label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(440, 388);
+            label3.Name = "label3";
+            label3.Size = new Size(155, 40);
+            label3.TabIndex = 10;
+            label3.Text = "PROFESOR";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(pictureBox1);
@@ -158,5 +182,7 @@
         private PictureBox pictureBox1;
         private Button button2;
         private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
