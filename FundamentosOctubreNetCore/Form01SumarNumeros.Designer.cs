@@ -76,6 +76,7 @@
             btnSumar.TabIndex = 4;
             btnSumar.Text = "Sumar números";
             btnSumar.UseVisualStyleBackColor = true;
+            btnSumar.Click += btnSumar_Click;
             // 
             // lblResultado
             // 
