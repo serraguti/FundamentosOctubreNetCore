@@ -9,6 +9,19 @@ namespace FundamentosOctubreNetCore
 
         private void btnPulsar_Click(object sender, EventArgs e)
         {
+            
+            //CONVERSION DE STRING A PRIMITIVO
+            string textoNumero = "12345";
+            int numeroEntero = int.Parse(textoNumero);
+            double numeroDecimal = double.Parse(textoNumero);
+
+            //CONVERTIR CUALQUIER CLASE A STRING
+            string dato = numeroEntero.ToString();
+            string otroDato = numeroDecimal.ToString();
+            string otroMas = this.btnPulsar.ToString();
+
+
+            
             //AQUI ES DONDE HAREMOS LAS ACCIONES CUANDO SE PULSE SOBRE EL BOTON
             //SOLAMENTE PODREMOS ESCRIBIR AQUI, ENTRE LAS LLAVES.
             //EN NINGUN OTRO SITIO
