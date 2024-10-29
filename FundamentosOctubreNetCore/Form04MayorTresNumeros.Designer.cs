@@ -96,6 +96,7 @@
             btnMostrarResultados.TabIndex = 6;
             btnMostrarResultados.Text = "Mostrar resultados";
             btnMostrarResultados.UseVisualStyleBackColor = true;
+            btnMostrarResultados.Click += btnMostrarResultados_Click;
             // 
             // lblMayor
             // 
