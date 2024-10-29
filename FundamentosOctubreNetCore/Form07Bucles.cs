@@ -23,11 +23,16 @@ namespace FundamentosOctubreNetCore
             //EL INICIO.  DICHA VARIABLE, SOLAMENTE LA PODEMOS UTILIZAR
             //DENTRO DEL BUCLE { ... }
             //HACEMOS UN BUCLE DE 1 A 7
+
+            //for (int i = 1; i <= 7; i++)
+            //{
+            //    resultado = resultado + i + ", ";
+            //    //resultado += i + ", ";
+            //}
             string resultado = "";
-            for (int i = 1; i <= 7; i++)
+            for (int i = 50; i >= 1; i--)
             {
-                resultado = resultado + i + ", ";
-                //resultado += i + ", ";
+                resultado += i + ", ";
             }
             this.txtResultado.Text = resultado;
         }
