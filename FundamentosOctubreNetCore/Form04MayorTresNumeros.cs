@@ -27,6 +27,7 @@ namespace FundamentosOctubreNetCore
             int intermedio = 0;
             //DEBEMOS COMPARAR EL NUMERO 1 CON EL RESTO DE NUMEROS QUE TENGAMOS
             //VOY A UTILIZAR EN LA COMPARACION TAMBIEN SI SON IGUALES >=
+            //ESTO HA CAMBIADO
             if (numero1 >= numero2 && numero1 >= numero3)
             {
                 mayor = numero1;
