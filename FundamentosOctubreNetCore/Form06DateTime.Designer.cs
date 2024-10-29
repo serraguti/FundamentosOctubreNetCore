@@ -48,9 +48,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(25, 24);
             label1.Name = "label1";
-            label1.Size = new Size(129, 30);
+            label1.Size = new Size(149, 30);
             label1.TabIndex = 0;
-            label1.Text = "Fecha actual";
+            label1.Text = "Fecha actuales";
             // 
             // txtFechaActual
             // 
@@ -68,6 +68,7 @@
             chkFormato.TabIndex = 2;
             chkFormato.Text = "Cambiar formato fecha";
             chkFormato.UseVisualStyleBackColor = true;
+            chkFormato.CheckedChanged += chkFormato_CheckedChanged;
             // 
             // rdbDias
             // 
@@ -126,6 +127,7 @@
             btnIncrementar.TabIndex = 8;
             btnIncrementar.Text = "Incrementar";
             btnIncrementar.UseVisualStyleBackColor = true;
+            btnIncrementar.Click += btnIncrementar_Click;
             // 
             // label3
             // 
