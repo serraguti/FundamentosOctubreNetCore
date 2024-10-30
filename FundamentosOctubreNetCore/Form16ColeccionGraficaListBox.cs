@@ -26,13 +26,17 @@ namespace FundamentosOctubreNetCore
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //PARA ELIMINAR UN ELEMENTO DE UNA COLECCION, TENEMOS 2 OPCIONES
-            //1) BORRAR POR EL OBJETO
+            //1) BORRAR POR EL OBJETO.  SI TENEMOS REPETIDOS, SE COMPORTA RARO
             //2) BORRAR POR EL INDICE/POSICION
             //PRIMERO VAMOS A BORRAR POR EL OBJETO DE LA COLECCION
             //RECUPERAMOS EL ELEMENTO SELECCIONADO DE LA COLECCION
-            string elementoSeleccionado = this.lstElementos.SelectedItem.ToString();
-            //ELIMINAMOS EL OBJETO DE LA COLECCION (Remove(elemento))
-            this.lstElementos.Items.Remove(elementoSeleccionado);
+            //string elementoSeleccionado = this.lstElementos.SelectedItem.ToString();
+            ////ELIMINAMOS EL OBJETO DE LA COLECCION (Remove(elemento))
+            //this.lstElementos.Items.Remove(elementoSeleccionado);
+            //RECUPERAMOS EL INDICE DEL ELEMENTO SELECCIONADO
+            int indiceSeleccionado = this.lstElementos.SelectedIndex;
+            //ELIMINAMOS POR INDICE (RemoveAt(indice))
+            this.lstElementos.Items.RemoveAt(indiceSeleccionado);
         }
     }
 }
