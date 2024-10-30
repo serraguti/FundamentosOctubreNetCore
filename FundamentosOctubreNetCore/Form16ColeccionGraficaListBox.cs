@@ -16,5 +16,11 @@ namespace FundamentosOctubreNetCore
         {
             InitializeComponent();
         }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            string elemento = this.txtNuevoElemento.Text;
+            this.lstElementos.Items.Add(elemento);
+        }
     }
 }
