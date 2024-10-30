@@ -80,6 +80,7 @@
             btnInvertirStringBuilder.TabIndex = 4;
             btnInvertirStringBuilder.Text = "Invertir StringBuilder";
             btnInvertirStringBuilder.UseVisualStyleBackColor = true;
+            btnInvertirStringBuilder.Click += btnInvertirStringBuilder_Click;
             // 
             // Form14StringBuilder
             // 
