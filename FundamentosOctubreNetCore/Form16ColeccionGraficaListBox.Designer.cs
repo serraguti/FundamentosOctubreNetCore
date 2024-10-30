@@ -104,6 +104,7 @@
             btnBorrarTodo.TabIndex = 6;
             btnBorrarTodo.Text = "Borrar todo";
             btnBorrarTodo.UseVisualStyleBackColor = false;
+            btnBorrarTodo.Click += btnBorrarTodo_Click;
             // 
             // lblItemSeleccionado
             // 

@@ -38,5 +38,10 @@ namespace FundamentosOctubreNetCore
             //ELIMINAMOS POR INDICE (RemoveAt(indice))
             this.lstElementos.Items.RemoveAt(indiceSeleccionado);
         }
+
+        private void btnBorrarTodo_Click(object sender, EventArgs e)
+        {
+            this.lstElementos.Items.Clear();
+        }
     }
 }
