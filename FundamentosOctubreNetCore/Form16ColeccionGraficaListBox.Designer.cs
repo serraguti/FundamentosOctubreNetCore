@@ -56,6 +56,7 @@
             lstElementos.Name = "lstElementos";
             lstElementos.Size = new Size(233, 304);
             lstElementos.TabIndex = 1;
+            lstElementos.SelectedIndexChanged += lstElementos_SelectedIndexChanged;
             // 
             // label2
             // 

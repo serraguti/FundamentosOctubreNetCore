@@ -43,5 +43,20 @@ namespace FundamentosOctubreNetCore
         {
             this.lstElementos.Items.Clear();
         }
+
+        private void lstElementos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //EL INDICE PUEDE CAMBIAR A -1 PORQUE ESTAMOS ELIMINANDO ELEMENTOS
+            //DEBERIAMOS SIEMPRE PREGUNTAR SI TENEMOS ELEMENTOS SELECCIONADOS
+            //EN ESTE EVENTO
+            if (this.lstElementos.SelectedIndex != -1)
+            {
+                //TENEMOS UN ELEMENTO SELECCIONADO
+                this.lblIndexSeleccionado.Text = "Indice: "
+                    + this.lstElementos.SelectedIndex;
+                this.lblItemSeleccionado.Text = "Item: "
+                    + this.lstElementos.SelectedItem;
+            }
+        }
     }
 }
