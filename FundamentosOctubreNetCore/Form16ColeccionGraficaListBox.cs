@@ -22,5 +22,17 @@ namespace FundamentosOctubreNetCore
             string elemento = this.txtNuevoElemento.Text;
             this.lstElementos.Items.Add(elemento);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //PARA ELIMINAR UN ELEMENTO DE UNA COLECCION, TENEMOS 2 OPCIONES
+            //1) BORRAR POR EL OBJETO
+            //2) BORRAR POR EL INDICE/POSICION
+            //PRIMERO VAMOS A BORRAR POR EL OBJETO DE LA COLECCION
+            //RECUPERAMOS EL ELEMENTO SELECCIONADO DE LA COLECCION
+            string elementoSeleccionado = this.lstElementos.SelectedItem.ToString();
+            //ELIMINAMOS EL OBJETO DE LA COLECCION (Remove(elemento))
+            this.lstElementos.Items.Remove(elementoSeleccionado);
+        }
     }
 }
