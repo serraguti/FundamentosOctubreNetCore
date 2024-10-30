@@ -115,6 +115,7 @@
             btnIniciar.TabIndex = 8;
             btnIniciar.Text = "Iniciar ASCII";
             btnIniciar.UseVisualStyleBackColor = true;
+            btnIniciar.Click += btnIniciar_Click;
             // 
             // Form11ClaseChar
             // 
