@@ -37,6 +37,7 @@
             btnBorrarTodo = new Button();
             lblItemSeleccionado = new Label();
             lblIndexSeleccionado = new Label();
+            btnRecorrerElementos = new Button();
             SuspendLayout();
             // 
             // label1
@@ -125,11 +126,22 @@
             lblIndexSeleccionado.TabIndex = 8;
             lblIndexSeleccionado.Text = "lblIndexSeleccionado";
             // 
+            // btnRecorrerElementos
+            // 
+            btnRecorrerElementos.Location = new Point(333, 303);
+            btnRecorrerElementos.Name = "btnRecorrerElementos";
+            btnRecorrerElementos.Size = new Size(274, 53);
+            btnRecorrerElementos.TabIndex = 9;
+            btnRecorrerElementos.Text = "Recorrer elementos";
+            btnRecorrerElementos.UseVisualStyleBackColor = true;
+            btnRecorrerElementos.Click += btnRecorrerElementos_Click;
+            // 
             // Form16ColeccionGraficaListBox
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(667, 485);
+            Controls.Add(btnRecorrerElementos);
             Controls.Add(lblIndexSeleccionado);
             Controls.Add(lblItemSeleccionado);
             Controls.Add(btnBorrarTodo);
@@ -158,5 +170,6 @@
         private Button btnBorrarTodo;
         private Label lblItemSeleccionado;
         private Label lblIndexSeleccionado;
+        private Button btnRecorrerElementos;
     }
 }

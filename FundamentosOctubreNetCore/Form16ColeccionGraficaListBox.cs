@@ -58,5 +58,19 @@ namespace FundamentosOctubreNetCore
                     + this.lstElementos.SelectedItem;
             }
         }
+
+        private void btnRecorrerElementos_Click(object sender, EventArgs e)
+        {
+            //QUEREMOS RECORRER TODOS LOS ELEMENTOS DE LA COLECCION
+            //DEL LISTBOX
+            //DIBUJAMOS TODOS LOS ELEMENTOS EN UN string EN UN LABEL
+            string data = "";
+            //UTILIZAMOS UN BUCLE FOREACH DE REFERENCIA
+            foreach (string elemento in this.lstElementos.Items)
+            {
+                data += elemento;
+            }
+            this.lblIndexSeleccionado.Text = data;
+        }
     }
 }
