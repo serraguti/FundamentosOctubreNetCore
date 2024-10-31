@@ -111,6 +111,7 @@
             txtSoloNumeros.Name = "txtSoloNumeros";
             txtSoloNumeros.Size = new Size(327, 35);
             txtSoloNumeros.TabIndex = 7;
+            txtSoloNumeros.KeyPress += txtSoloNumeros_KeyPress;
             // 
             // Form18EventosMetodos
             // 
