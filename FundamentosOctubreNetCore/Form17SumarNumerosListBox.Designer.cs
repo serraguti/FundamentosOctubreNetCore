@@ -85,6 +85,7 @@
             btnAgregarNumero.Text = "Nuevo número";
             btnAgregarNumero.UseVisualStyleBackColor = true;
             btnAgregarNumero.Click += btnAgregarNumero_Click;
+            btnAgregarNumero.KeyDown += btnAgregarNumero_KeyDown;
             // 
             // label3
             // 
