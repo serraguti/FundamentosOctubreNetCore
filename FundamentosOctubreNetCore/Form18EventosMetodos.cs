@@ -59,7 +59,15 @@ namespace FundamentosOctubreNetCore
             //DICHO DE OTRA FORMA, ME DEJA HACERLO A MI.
             //TENGO ALGUNA FORMA MILAGROSA DE SABER SI UN CARACTER ES LETRA O NO???
             // char.IsLetter()
-            if (char.IsLetter(e.KeyChar) == false)
+            //A LO MEJOR, DESEAMOS DEJAR MAS CARACTERES, POR EJEMPLO, ESPACIOS
+            //QUE SUCEDE SI NECESITAMOS CARACTERES ESPECIALES QUE NO PUEDO ESCRIBIR
+            //POR EJEMPLO, LA TECLA DE BORRAR (BACK)
+            //TENEMOS UNA ENUMERACION QUE SE LLAMA Keys Y NOS OFRECE LOS CODIGOS ASCII
+            //DE TODAS LAS TECLAS
+            //PODEMOS CONVERTIR EL CODIGO ASCII A CHAR Y PREGUNTAR POR UNA TECLA ESPECIAL
+            //COMO UN ENTER O UN BACK POR EJEMPLO
+            char teclaBorrar = (char)Keys.Back;
+            if (char.IsLetter(e.KeyChar) == false && e.KeyChar != teclaBorrar)
             {
                 e.Handled = true;
             }
