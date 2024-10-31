@@ -15,10 +15,16 @@ namespace FundamentosOctubreNetCore
         public Form19SumarBotonesNumeros()
         {
             InitializeComponent();
-            this.button1.Click += SumarNumeros;
-            this.button2.Click += SumarNumeros;
-            this.button3.Click += SumarNumeros;
-            this.button4.Click += SumarNumeros;
+            //RECORREMOS TODOS LOS CONTROLES DEL FORMULARIO MEDIANTE 
+            //LA COLECCION CONTROLS
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                {
+                    //ASOCIAMOS DINAMICAMENTE EL BOTON AL METODO DE EVENTO
+                    c.Click += SumarNumeros;
+                }
+            }
         }
 
         //CREAMOS UN METODO DE EVENTO

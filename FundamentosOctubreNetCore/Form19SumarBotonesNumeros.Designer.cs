@@ -33,6 +33,8 @@
             button3 = new Button();
             button4 = new Button();
             lblSuma = new Label();
+            textBox1 = new TextBox();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // button1
@@ -81,11 +83,29 @@
             lblSuma.TabIndex = 4;
             lblSuma.Text = "0";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(307, 109);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 35);
+            textBox1.TabIndex = 5;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 30;
+            listBox1.Location = new Point(368, 165);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(120, 244);
+            listBox1.TabIndex = 6;
+            // 
             // Form19SumarBotonesNumeros
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(517, 197);
+            ClientSize = new Size(776, 431);
+            Controls.Add(listBox1);
+            Controls.Add(textBox1);
             Controls.Add(lblSuma);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -106,5 +126,7 @@
         private Button button3;
         private Button button4;
         private Label lblSuma;
+        private TextBox textBox1;
+        private ListBox listBox1;
     }
 }
