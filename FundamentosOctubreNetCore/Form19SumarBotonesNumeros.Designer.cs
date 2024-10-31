@@ -33,8 +33,10 @@
             button3 = new Button();
             button4 = new Button();
             lblSuma = new Label();
-            textBox1 = new TextBox();
-            listBox1 = new ListBox();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -77,35 +79,57 @@
             // 
             lblSuma.AutoSize = true;
             lblSuma.ForeColor = Color.Blue;
-            lblSuma.Location = new Point(48, 130);
+            lblSuma.Location = new Point(48, 271);
             lblSuma.Name = "lblSuma";
             lblSuma.Size = new Size(24, 30);
             lblSuma.TabIndex = 4;
             lblSuma.Text = "0";
             // 
-            // textBox1
+            // button5
             // 
-            textBox1.Location = new Point(307, 109);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 35);
-            textBox1.TabIndex = 5;
+            button5.Location = new Point(395, 113);
+            button5.Name = "button5";
+            button5.Size = new Size(84, 64);
+            button5.TabIndex = 8;
+            button5.Text = "666";
+            button5.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // button6
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 30;
-            listBox1.Location = new Point(368, 165);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(120, 244);
-            listBox1.TabIndex = 6;
+            button6.Location = new Point(290, 113);
+            button6.Name = "button6";
+            button6.Size = new Size(84, 64);
+            button6.TabIndex = 7;
+            button6.Text = "89";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(168, 113);
+            button7.Name = "button7";
+            button7.Size = new Size(84, 64);
+            button7.TabIndex = 6;
+            button7.Text = "7";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(48, 113);
+            button8.Name = "button8";
+            button8.Size = new Size(84, 64);
+            button8.TabIndex = 5;
+            button8.Text = "99";
+            button8.UseVisualStyleBackColor = true;
             // 
             // Form19SumarBotonesNumeros
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(776, 431);
-            Controls.Add(listBox1);
-            Controls.Add(textBox1);
+            Controls.Add(button5);
+            Controls.Add(button6);
+            Controls.Add(button7);
+            Controls.Add(button8);
             Controls.Add(lblSuma);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -126,7 +150,9 @@
         private Button button3;
         private Button button4;
         private Label lblSuma;
-        private TextBox textBox1;
-        private ListBox listBox1;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
     }
 }
