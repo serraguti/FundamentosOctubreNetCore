@@ -32,6 +32,10 @@
             button2 = new Button();
             button3 = new Button();
             lblRaton = new Label();
+            label1 = new Label();
+            txtSoloLetras = new TextBox();
+            label2 = new Label();
+            txtSoloNumeros = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -74,11 +78,49 @@
             lblRaton.Click += lblRaton_Click;
             lblRaton.MouseMove += lblRaton_MouseMove;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(38, 341);
+            label1.Name = "label1";
+            label1.Size = new Size(109, 30);
+            label1.TabIndex = 4;
+            label1.Text = "Solo letras";
+            // 
+            // txtSoloLetras
+            // 
+            txtSoloLetras.Location = new Point(190, 336);
+            txtSoloLetras.Name = "txtSoloLetras";
+            txtSoloLetras.Size = new Size(326, 35);
+            txtSoloLetras.TabIndex = 5;
+            txtSoloLetras.TextChanged += txtSoloLetras_TextChanged;
+            txtSoloLetras.KeyPress += txtSoloLetras_KeyPress;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(43, 390);
+            label2.Name = "label2";
+            label2.Size = new Size(140, 30);
+            label2.TabIndex = 6;
+            label2.Text = "Solo números";
+            // 
+            // txtSoloNumeros
+            // 
+            txtSoloNumeros.Location = new Point(189, 385);
+            txtSoloNumeros.Name = "txtSoloNumeros";
+            txtSoloNumeros.Size = new Size(327, 35);
+            txtSoloNumeros.TabIndex = 7;
+            // 
             // Form18EventosMetodos
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 454);
+            Controls.Add(txtSoloNumeros);
+            Controls.Add(label2);
+            Controls.Add(txtSoloLetras);
+            Controls.Add(label1);
             Controls.Add(lblRaton);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -88,6 +130,7 @@
             Name = "Form18EventosMetodos";
             Text = "Form18EventosMetodos";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -96,5 +139,9 @@
         private Button button2;
         private Button button3;
         private Label lblRaton;
+        private Label label1;
+        private TextBox txtSoloLetras;
+        private Label label2;
+        private TextBox txtSoloNumeros;
     }
 }

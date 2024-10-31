@@ -39,12 +39,23 @@ namespace FundamentosOctubreNetCore
 
         private void lblRaton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lblRaton_MouseMove(object sender, MouseEventArgs e)
         {
             this.lblRaton.Text = "X: " + e.X + ", Y: " + e.Y;
+        }
+
+        private void txtSoloLetras_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //e.KeyChar: ES EL CARACTER QUE SE HA PULSADO
+            e.Handled = true;
         }
     }
 }
