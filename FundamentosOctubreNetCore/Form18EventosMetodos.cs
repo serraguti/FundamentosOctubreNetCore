@@ -55,7 +55,14 @@ namespace FundamentosOctubreNetCore
         private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
         {
             //e.KeyChar: ES EL CARACTER QUE SE HA PULSADO
-            e.Handled = true;
+            //e.Handled = true; SE ENCARGA DE MANEJAR DE FORMA MANUAL EL EVENTO
+            //DICHO DE OTRA FORMA, ME DEJA HACERLO A MI.
+            //TENGO ALGUNA FORMA MILAGROSA DE SABER SI UN CARACTER ES LETRA O NO???
+            // char.IsLetter()
+            if (char.IsLetter(e.KeyChar) == false)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
