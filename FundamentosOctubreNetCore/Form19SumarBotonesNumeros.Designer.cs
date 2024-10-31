@@ -37,6 +37,14 @@
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
+            button14 = new Button();
+            button15 = new Button();
+            button16 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -79,7 +87,7 @@
             // 
             lblSuma.AutoSize = true;
             lblSuma.ForeColor = Color.Blue;
-            lblSuma.Location = new Point(48, 271);
+            lblSuma.Location = new Point(48, 361);
             lblSuma.Name = "lblSuma";
             lblSuma.Size = new Size(24, 30);
             lblSuma.TabIndex = 4;
@@ -121,11 +129,91 @@
             button8.Text = "99";
             button8.UseVisualStyleBackColor = true;
             // 
+            // button9
+            // 
+            button9.Location = new Point(395, 282);
+            button9.Name = "button9";
+            button9.Size = new Size(84, 64);
+            button9.TabIndex = 16;
+            button9.Text = "666";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(290, 282);
+            button10.Name = "button10";
+            button10.Size = new Size(84, 64);
+            button10.TabIndex = 15;
+            button10.Text = "89";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(168, 282);
+            button11.Name = "button11";
+            button11.Size = new Size(84, 64);
+            button11.TabIndex = 14;
+            button11.Text = "7";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(48, 282);
+            button12.Name = "button12";
+            button12.Size = new Size(84, 64);
+            button12.TabIndex = 13;
+            button12.Text = "99";
+            button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(395, 190);
+            button13.Name = "button13";
+            button13.Size = new Size(84, 64);
+            button13.TabIndex = 12;
+            button13.Text = "88";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(290, 190);
+            button14.Name = "button14";
+            button14.Size = new Size(84, 64);
+            button14.TabIndex = 11;
+            button14.Text = "2";
+            button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(168, 190);
+            button15.Name = "button15";
+            button15.Size = new Size(84, 64);
+            button15.TabIndex = 10;
+            button15.Text = "147";
+            button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            button16.Location = new Point(48, 190);
+            button16.Name = "button16";
+            button16.Size = new Size(84, 64);
+            button16.TabIndex = 9;
+            button16.Text = "14";
+            button16.UseVisualStyleBackColor = true;
+            // 
             // Form19SumarBotonesNumeros
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(776, 431);
+            ClientSize = new Size(562, 431);
+            Controls.Add(button9);
+            Controls.Add(button10);
+            Controls.Add(button11);
+            Controls.Add(button12);
+            Controls.Add(button13);
+            Controls.Add(button14);
+            Controls.Add(button15);
+            Controls.Add(button16);
             Controls.Add(button5);
             Controls.Add(button6);
             Controls.Add(button7);
@@ -154,5 +242,13 @@
         private Button button6;
         private Button button7;
         private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
+        private Button button15;
+        private Button button16;
     }
 }

@@ -15,12 +15,17 @@ namespace FundamentosOctubreNetCore
         public Form19SumarBotonesNumeros()
         {
             InitializeComponent();
+            //DECLARAMOS UN OBJETO RANDOM
+            Random random = new Random();
             //RECORREMOS TODOS LOS CONTROLES DEL FORMULARIO MEDIANTE 
             //LA COLECCION CONTROLS
             foreach (Control c in this.Controls)
             {
                 if (c is Button)
                 {
+                    //GENERAMOS UN NUMERO ALEATORIO POR CADA BOTON
+                    int aleatorio = random.Next(1, 200);
+                    c.Text = aleatorio.ToString();
                     //ASOCIAMOS DINAMICAMENTE EL BOTON AL METODO DE EVENTO
                     c.Click += SumarNumeros;
                 }
