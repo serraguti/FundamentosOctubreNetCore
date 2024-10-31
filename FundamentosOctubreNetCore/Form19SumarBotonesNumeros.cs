@@ -46,5 +46,10 @@ namespace FundamentosOctubreNetCore
             //DIBUJAMOS EN EL LABEL LA SUMA
             this.lblSuma.Text = suma.ToString();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
