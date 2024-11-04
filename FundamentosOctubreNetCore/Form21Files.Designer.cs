@@ -32,6 +32,8 @@
             txtContenido = new RichTextBox();
             btnLeerFichero = new Button();
             btnGuardarFichero = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
             SuspendLayout();
             // 
             // label1
@@ -71,6 +73,10 @@
             btnGuardarFichero.UseVisualStyleBackColor = true;
             btnGuardarFichero.Click += btnGuardarFichero_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form21Files
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -94,5 +100,7 @@
         private RichTextBox txtContenido;
         private Button btnLeerFichero;
         private Button btnGuardarFichero;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

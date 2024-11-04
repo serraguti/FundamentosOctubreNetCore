@@ -31,8 +31,11 @@ namespace FundamentosOctubreNetCore
         //DEBEMOS UTILIZAR OPERACIONES ASINCRONAS
         private async void btnLeerFichero_Click(object sender, EventArgs e)
         {
-            //VAMOS A UTILIZAR LA RUTA QUE TENEMOS A NIVEL DE CLASE
-            FileInfo file = new FileInfo(this.rutaFichero);
+            //ABRIMOS EL CUADRO DE DIALOGO DE FICHEROS
+            this.openFileDialog1.ShowDialog();
+            //CAPTURAMOS LA RUTA DEL FICHERO
+            string path = this.openFileDialog1.FileName;
+            FileInfo file = new FileInfo(path);
             //CON LA CLASE TEXTREADER INDICAMOS QUE VAMOS A LEER UN FICHERO
             //DE TEXTO PLANO
             //AL CREAR EL OBJETO, DEBEMOS ASEGURARNOS QUE LO HA CREADO
@@ -52,7 +55,9 @@ namespace FundamentosOctubreNetCore
 
         private async void btnGuardarFichero_Click(object sender, EventArgs e)
         {
-            FileInfo file = new FileInfo(this.rutaFichero);
+            this.saveFileDialog1.ShowDialog();
+            string path = this.saveFileDialog1.FileName;
+            FileInfo file = new FileInfo(path);
             using (TextWriter writer = file.CreateText())
             {
                 //RECUPERAMOS EL CONTENIDO ESCRITO EN LA CAJA
