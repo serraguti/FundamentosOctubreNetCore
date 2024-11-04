@@ -11,9 +11,6 @@ namespace ProyectoClases
     public class Persona
     {
         #region PROPIEDADES
-        public Paises Nacionalidad { get; set; }
-
-        //VAMOS A CREAR TRES PROPIEDADES
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
 
@@ -42,11 +39,14 @@ namespace ProyectoClases
                 }
             }
         }
+
+        public Paises Nacionalidad { get; set; }
+
         #endregion
 
         #region METODOS
-            //CREAMOS UN NUEVO METODO PARA DEVOLVER EL NOMBRE COMPLETO
-            //DE UNA PERSONA
+        //CREAMOS UN NUEVO METODO PARA DEVOLVER EL NOMBRE COMPLETO
+        //DE UNA PERSONA
         public string GetNombreCompleto()
         {
             return this.Nombre + " " + this.Apellidos;
