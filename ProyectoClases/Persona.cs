@@ -6,21 +6,28 @@ using System.Threading.Tasks;
 
 namespace ProyectoClases
 {
+    public enum Paises { España, Francia, Alemania, Suiza, China, Andorra, Colombia }
+
     public class Persona
     {
+        #region PROPIEDADES
+        public Paises Nacionalidad { get; set; }
+
         //VAMOS A CREAR TRES PROPIEDADES
-        public string Nombre;
-        public string Apellidos;
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
 
         private int _CampoEdad;
 
         public int Edad
         {
-            get {
+            get
+            {
                 //CUANDO UN USUARIO QUIERA EL VALOR, LE DEVOLVEMOS EL CAMPO
                 return this._CampoEdad;
             }
-            set { 
+            set
+            {
                 //CUANDO UN USUARIO QUIERA ESTABLECER UN VALOR, PRIMERO
                 //COMPROBAMOS
                 if (value < 0)
@@ -35,8 +42,16 @@ namespace ProyectoClases
                 }
             }
         }
+        #endregion
 
-
+        #region METODOS
+            //CREAMOS UN NUEVO METODO PARA DEVOLVER EL NOMBRE COMPLETO
+            //DE UNA PERSONA
+        public string GetNombreCompleto()
+        {
+            return this.Nombre + " " + this.Apellidos;
+        }
+        #endregion
 
 
     }
