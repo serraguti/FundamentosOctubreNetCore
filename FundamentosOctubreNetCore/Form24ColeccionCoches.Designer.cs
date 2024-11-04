@@ -58,6 +58,7 @@
             lstCoches.Name = "lstCoches";
             lstCoches.Size = new Size(288, 334);
             lstCoches.TabIndex = 1;
+            lstCoches.SelectedIndexChanged += lstCoches_SelectedIndexChanged;
             // 
             // lblMensaje
             // 
@@ -124,6 +125,7 @@
             btnGuardarCoche.TabIndex = 9;
             btnGuardarCoche.Text = "Guardar coche";
             btnGuardarCoche.UseVisualStyleBackColor = true;
+            btnGuardarCoche.Click += btnGuardarCoche_Click;
             // 
             // btnMostrarCoches
             // 
@@ -133,6 +135,7 @@
             btnMostrarCoches.TabIndex = 10;
             btnMostrarCoches.Text = "Mostrar coches";
             btnMostrarCoches.UseVisualStyleBackColor = true;
+            btnMostrarCoches.Click += btnMostrarCoches_Click;
             // 
             // Form24ColeccionCoches
             // 
