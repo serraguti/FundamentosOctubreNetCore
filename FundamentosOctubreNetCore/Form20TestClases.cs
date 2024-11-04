@@ -25,7 +25,7 @@ namespace FundamentosOctubreNetCore
             Persona persona = new Persona();
             persona.Nombre = "Andres";
             persona.Apellidos = "Leon";
-            persona.Edad = 28;
+            persona.Edad = -28;
             this.lstPropiedades.Items.Add(persona.Nombre + " "
                 + persona.Apellidos + " " + persona.Edad);
         }
