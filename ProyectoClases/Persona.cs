@@ -51,6 +51,27 @@ namespace ProyectoClases
         {
             return this.Nombre + " " + this.Apellidos;
         }
+
+        //INVERSA LOS VALORES DEL NOMBRE
+        public string GetNombreCompleto(bool orden)
+        {
+            return this.Apellidos + " " + this.Nombre;
+        }
+
+        public string GetNombreCompleto(int orden)
+        {
+            return (this.Nombre + " " + this.Apellidos).ToUpper();
+        }
+
+        public void GetNombreCompleto(int num1, int num2)
+        {
+
+        }
+
+        public int GetNombreCompleto(string texto)
+        {
+            return 0;
+        }
         #endregion
 
 

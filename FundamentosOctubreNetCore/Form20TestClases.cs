@@ -28,6 +28,8 @@ namespace FundamentosOctubreNetCore
             persona.Edad = 28;
             persona.Nacionalidad = Paises.Suiza;
             this.lstPropiedades.Items.Add(persona.GetNombreCompleto());
+            this.lstPropiedades.Items.Add(persona.GetNombreCompleto(true));
+            this.lstPropiedades.Items.Add(persona.GetNombreCompleto(8899));
             this.lstPropiedades.Items.Add(persona.Nombre + " "
                 + persona.Apellidos + " " + persona.Edad);
         }
