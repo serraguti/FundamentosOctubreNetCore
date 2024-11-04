@@ -94,6 +94,7 @@
             btnGuardarMascota.TabIndex = 6;
             btnGuardarMascota.Text = "Guardar mascota";
             btnGuardarMascota.UseVisualStyleBackColor = true;
+            btnGuardarMascota.Click += btnGuardarMascota_Click;
             // 
             // btnLeerMascota
             // 
@@ -103,6 +104,7 @@
             btnLeerMascota.TabIndex = 7;
             btnLeerMascota.Text = "Leer mascota";
             btnLeerMascota.UseVisualStyleBackColor = true;
+            btnLeerMascota.Click += btnLeerMascota_Click;
             // 
             // Form25SerializarSimple
             // 
