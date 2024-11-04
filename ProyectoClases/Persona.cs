@@ -74,6 +74,23 @@ namespace ProyectoClases
         }
         #endregion
 
+        #region CONSTRUCTOR
 
+        public Persona()
+        {
+            this.Nombre = "Jhon";
+            this.Apellidos = "Doe";
+            this.Edad = 1;
+            this.Nacionalidad = Paises.Francia;
+        }
+
+        public Persona(string nombre, string apellidos, int edad)
+        {
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Edad = edad;
+        }
+
+        #endregion
     }
 }

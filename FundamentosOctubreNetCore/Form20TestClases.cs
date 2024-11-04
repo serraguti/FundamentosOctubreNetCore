@@ -22,11 +22,11 @@ namespace FundamentosOctubreNetCore
 
         private void btnCrearPersona_Click(object sender, EventArgs e)
         {
-            Persona persona = new Persona();
-            persona.Nombre = "Andres";
-            persona.Apellidos = "Leon";
-            persona.Edad = 28;
-            persona.Nacionalidad = Paises.Suiza;
+            Persona persona = new Persona("Alicia", "Maravilla", 22);
+            //persona.Nombre = "Andres";
+            //persona.Apellidos = "Leon";
+            //persona.Edad = 28;
+            //persona.Nacionalidad = Paises.Suiza;
             this.lstPropiedades.Items.Add(persona.GetNombreCompleto());
             this.lstPropiedades.Items.Add(persona.GetNombreCompleto(true));
             this.lstPropiedades.Items.Add(persona.GetNombreCompleto(8899));
