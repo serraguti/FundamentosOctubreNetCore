@@ -27,7 +27,7 @@ namespace AdoNet
             //AL INICIAR LA CLASE, DEBEMOS INICIALIZAR LOS OBJETOS DE 
             //ACCESO A DATOS.
             //NECESITAMOS LA CADENA DE CONEXION A SQL SERVER
-            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Trust Server Certificate=True";
+            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;";
             //CREAMOS EL OBJETO CONNECTION.  DICHO OBJETO, AL SER INSTANCIADO LE DEBEMOS 
             //INDICAR LA CADENA DE CONEXION
             this.cn = new SqlConnection(connectionString);
