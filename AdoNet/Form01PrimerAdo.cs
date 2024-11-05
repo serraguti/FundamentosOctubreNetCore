@@ -37,10 +37,13 @@ namespace AdoNet
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            //ABRIMOS LA CONEXION
-            this.cn.Open();
-            this.lblMensaje.Text = "Conectado";
-            this.lblMensaje.BackColor = Color.LightGreen;
+            if (this.cn.State == ConnectionState.Closed)
+            {
+                //ABRIMOS LA CONEXION
+                this.cn.Open();
+                this.lblMensaje.Text = "Conectado";
+                this.lblMensaje.BackColor = Color.LightGreen;
+            }
         }
 
         private void btnDesconectar_Click(object sender, EventArgs e)
