@@ -52,5 +52,30 @@ namespace AdoNet
             this.lblMensaje.Text = "Desconectado";
             this.lblMensaje.BackColor = Color.Red;
         }
+
+        private void btnLeerDatos_Click(object sender, EventArgs e)
+        {
+            //PARA PODER LEER DATOS, NECESITAMOS QUE LA CONEXION ESTE ABIERTA
+            //CONSULTA QUE VAMOS A REALIZAR
+            string sql = "select * from EMP";
+            //INDICAMOS AL COMANDO QUE CONEXION VA A UTILIZAR
+            this.com.Connection = this.cn;
+            //DEBEMOS INDICAR EL TIPO DE CONSULTA A REALIZAR
+            this.com.CommandType = CommandType.Text;
+            //INDICAMOS LA CONSULTA SQL
+            this.com.CommandText = sql;
+            //A PARTIR DE AQUI, LA CONEXION DEBERIA ESTAR ABIERTA
+            //COMO ES UNA CONSULTA DE SELECCION, DEBEMOS EJECUTAR EN EL 
+            //COMANDO EL METODO ExecuteReader() QUE NOS DEVUELVE UN 
+            //DataReader
+            this.reader = this.com.ExecuteReader();
+            //YA TENEMOS LOS DATOS AQUI
+            //DIBUJAMOS LA PRIMERA COLUMNA DE LA CONSULTA
+            string columna = this.reader.GetName(0);
+            //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
+            string tipoDato = this.reader.GetDataTypeName(0);
+            this.lstColumnas.Items.Add(columna);
+            this.lstTiposDato.Items.Add(tipoDato);
+        }
     }
 }
