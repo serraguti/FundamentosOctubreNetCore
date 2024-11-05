@@ -70,17 +70,29 @@ namespace AdoNet
             //DataReader
             this.reader = this.com.ExecuteReader();
             //YA TENEMOS LOS DATOS AQUI
-            //DIBUJAMOS LA PRIMERA COLUMNA DE LA CONSULTA
-            string columna = this.reader.GetName(0);
-            //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
-            string tipoDato = this.reader.GetDataTypeName(0);
-            this.lstColumnas.Items.Add(columna);
-            this.lstTiposDato.Items.Add(tipoDato);
+            //DIBUJAMOS LAS COLUMNAS DE LA CONSULTA
+            //TENEMOS UNA PROPIEDAD LLAMADA FieldCount QUE DEVUELVE
+            //EL NUMERO DE COLUMNAS
+            for (int i = 0; i < this.reader.FieldCount; i++)
+            {
+                string columna = this.reader.GetName(i);
+                //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
+                string tipoDato = this.reader.GetDataTypeName(i);
+                this.lstColumnas.Items.Add(columna);
+                this.lstTiposDato.Items.Add(tipoDato);
+            }
 
-            //VAMOS A LEER EL PRIMER DATO DEL APELLIDO
-            string apellido = this.reader["APELLIDO"].ToString();
-            this.lstApellidos.Items.Add(apellido);
 
+            //VAMOS A LEER TODOS LOS APELLIDOS
+            //EL METODO Read() DEVUELVE UN BOOLEAN MIENTRAS QUE PUEDA LEER
+            while (this.reader.Read())
+            {
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstApellidos.Items.Add(apellido);
+            }
+            //AL FINALIZAR LA LECTURA DE DATOS, SIEMPRE DEBEMOS CERRAR LOS 
+            //RECURSOS
+            this.reader.Close();
         }
     }
 }
