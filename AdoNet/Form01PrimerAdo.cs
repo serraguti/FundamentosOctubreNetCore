@@ -76,6 +76,11 @@ namespace AdoNet
             string tipoDato = this.reader.GetDataTypeName(0);
             this.lstColumnas.Items.Add(columna);
             this.lstTiposDato.Items.Add(tipoDato);
+
+            //VAMOS A LEER EL PRIMER DATO DEL APELLIDO
+            string apellido = this.reader["APELLIDO"].ToString();
+            this.lstApellidos.Items.Add(apellido);
+
         }
     }
 }
