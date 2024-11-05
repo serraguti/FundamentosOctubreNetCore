@@ -163,3 +163,37 @@ update EMP set SALARIO = SALARIO + 1
 where OFICIO = 'DIRECTOR'
 
 select * from EMP
+
+
+--1)	MOSTRAR EL NUMERO DE EMPLEADOS Y SU MAXIMO SALARIO POR CADA NOMBRE DE DEPARTAMENTO
+
+select COUNT(*) as PERSONAS, MAX(EMP.SALARIO) as MAXIMO
+, DEPT.DNOMBRE
+from EMP
+inner join DEPT
+on EMP.DEPT_NO = DEPT.DEPT_NO
+group by DEPT.DNOMBRE
+
+
+--2)	MOSTRAR EL NUMERO DE DOCTORES POR CADA NOMBRE DE HOSPITAL
+--•	TENEMOS UNA TABLA LLAMADA HOSPITAL
+--•	TENEMOS UNA TABLA LLAMADA DOCTOR
+
+select COUNT(*) as DOCTORES, HOSPITAL.NOMBRE
+from DOCTOR
+inner join HOSPITAL
+on DOCTOR.HOSPITAL_COD = HOSPITAL.HOSPITAL_COD
+group by HOSPITAL.NOMBRE
+select * from HOSPITAL
+select * from DOCTOR
+
+--3)	Se quiere dar de alta un departamento de RRHH situado en Soria y otro departamento de Informática en Alicante.  
+select * from DEPT
+insert into DEPT values (50, 'RRHH', 'SORIA')
+insert into DEPT values (60, 'INFORMATICA', 'ALICANTE')
+
+--4)	Incrementar en 10000 el salario de los interinos de la plantilla que trabajen en el turno de noche.
+
+update PLANTILLA set SALARIO = SALARIO + 10000 
+where T = 'N'
+select * from PLANTILLA
