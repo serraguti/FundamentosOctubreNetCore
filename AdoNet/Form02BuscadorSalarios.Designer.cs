@@ -106,6 +106,7 @@
             btnBuscarEmpleadosOficio.TabIndex = 7;
             btnBuscarEmpleadosOficio.Text = "Buscar empleados Oficio";
             btnBuscarEmpleadosOficio.UseVisualStyleBackColor = true;
+            btnBuscarEmpleadosOficio.Click += btnBuscarEmpleadosOficio_Click;
             // 
             // Form02BuscadorSalarios
             // 

@@ -55,5 +55,25 @@ namespace AdoNet
             this.reader.Close();
             this.cn.Close();
         }
+
+        private void btnBuscarEmpleadosOficio_Click(object sender, EventArgs e)
+        {
+            string datoOficio = this.txtOficio.Text;
+            string sql = "select * from EMP where OFICIO='" + datoOficio + "'";
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            this.lstEmpleados.Items.Clear();
+            while (this.reader.Read())
+            {
+                string apellido = this.reader["APELLIDO"].ToString();
+                string oficio = this.reader["OFICIO"].ToString();
+                this.lstEmpleados.Items.Add(apellido + " - " + oficio);
+            }
+            this.reader.Close();
+            this.cn.Close();
+        }
     }
 }
