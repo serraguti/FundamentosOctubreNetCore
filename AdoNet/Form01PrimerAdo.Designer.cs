@@ -48,6 +48,7 @@
             btnConectar.TabIndex = 0;
             btnConectar.Text = "Conectar BBDD";
             btnConectar.UseVisualStyleBackColor = true;
+            btnConectar.Click += btnConectar_Click;
             // 
             // btnDesconectar
             // 
@@ -57,6 +58,7 @@
             btnDesconectar.TabIndex = 1;
             btnDesconectar.Text = "Desconectar";
             btnDesconectar.UseVisualStyleBackColor = true;
+            btnDesconectar.Click += btnDesconectar_Click;
             // 
             // btnLeerDatos
             // 
