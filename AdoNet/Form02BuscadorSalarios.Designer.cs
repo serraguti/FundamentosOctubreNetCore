@@ -33,6 +33,9 @@
             btnBuscarEmpleadosSalario = new Button();
             label2 = new Label();
             lstEmpleados = new ListBox();
+            label3 = new Label();
+            txtOficio = new TextBox();
+            btnBuscarEmpleadosOficio = new Button();
             SuspendLayout();
             // 
             // label1
@@ -55,9 +58,9 @@
             // 
             btnBuscarEmpleadosSalario.Location = new Point(51, 85);
             btnBuscarEmpleadosSalario.Name = "btnBuscarEmpleadosSalario";
-            btnBuscarEmpleadosSalario.Size = new Size(262, 55);
+            btnBuscarEmpleadosSalario.Size = new Size(262, 70);
             btnBuscarEmpleadosSalario.TabIndex = 2;
-            btnBuscarEmpleadosSalario.Text = "Buscar empleados";
+            btnBuscarEmpleadosSalario.Text = "Buscar empleados salario";
             btnBuscarEmpleadosSalario.UseVisualStyleBackColor = true;
             btnBuscarEmpleadosSalario.Click += btnBuscarEmpleadosSalario_Click;
             // 
@@ -79,11 +82,39 @@
             lstEmpleados.Size = new Size(256, 244);
             lstEmpleados.TabIndex = 4;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(384, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(169, 30);
+            label3.TabIndex = 5;
+            label3.Text = "Introduzca oficio";
+            // 
+            // txtOficio
+            // 
+            txtOficio.Location = new Point(384, 40);
+            txtOficio.Name = "txtOficio";
+            txtOficio.Size = new Size(248, 35);
+            txtOficio.TabIndex = 6;
+            // 
+            // btnBuscarEmpleadosOficio
+            // 
+            btnBuscarEmpleadosOficio.Location = new Point(383, 85);
+            btnBuscarEmpleadosOficio.Name = "btnBuscarEmpleadosOficio";
+            btnBuscarEmpleadosOficio.Size = new Size(249, 75);
+            btnBuscarEmpleadosOficio.TabIndex = 7;
+            btnBuscarEmpleadosOficio.Text = "Buscar empleados Oficio";
+            btnBuscarEmpleadosOficio.UseVisualStyleBackColor = true;
+            // 
             // Form02BuscadorSalarios
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(382, 459);
+            ClientSize = new Size(671, 459);
+            Controls.Add(btnBuscarEmpleadosOficio);
+            Controls.Add(txtOficio);
+            Controls.Add(label3);
             Controls.Add(lstEmpleados);
             Controls.Add(label2);
             Controls.Add(btnBuscarEmpleadosSalario);
@@ -104,5 +135,8 @@
         private Button btnBuscarEmpleadosSalario;
         private Label label2;
         private ListBox lstEmpleados;
+        private Label label3;
+        private TextBox txtOficio;
+        private Button btnBuscarEmpleadosOficio;
     }
 }

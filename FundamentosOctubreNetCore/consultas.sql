@@ -196,4 +196,5 @@ insert into DEPT values (60, 'INFORMATICA', 'ALICANTE')
 
 update PLANTILLA set SALARIO = SALARIO + 10000 
 where T = 'N'
-select * from PLANTILLA
+
+select * from EMP where OFICIO='ANALISTA'
