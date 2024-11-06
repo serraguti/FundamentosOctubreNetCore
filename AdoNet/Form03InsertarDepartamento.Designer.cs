@@ -36,6 +36,7 @@
             txtLocalidad = new TextBox();
             btnInsertarDepartamento = new Button();
             lblMensaje = new Label();
+            btnInsertarDepartamentoParams = new Button();
             SuspendLayout();
             // 
             // label1
@@ -99,17 +100,29 @@
             // lblMensaje
             // 
             lblMensaje.AutoSize = true;
-            lblMensaje.Location = new Point(35, 342);
+            lblMensaje.Location = new Point(35, 431);
             lblMensaje.Name = "lblMensaje";
             lblMensaje.Size = new Size(113, 30);
             lblMensaje.TabIndex = 7;
             lblMensaje.Text = "lblMensaje";
             // 
+            // btnInsertarDepartamentoParams
+            // 
+            btnInsertarDepartamentoParams.BackColor = Color.FromArgb(255, 255, 192);
+            btnInsertarDepartamentoParams.Location = new Point(36, 331);
+            btnInsertarDepartamentoParams.Name = "btnInsertarDepartamentoParams";
+            btnInsertarDepartamentoParams.Size = new Size(275, 85);
+            btnInsertarDepartamentoParams.TabIndex = 8;
+            btnInsertarDepartamentoParams.Text = "Insertar departamento parámetros";
+            btnInsertarDepartamentoParams.UseVisualStyleBackColor = false;
+            btnInsertarDepartamentoParams.Click += btnInsertarDepartamentoParams_Click;
+            // 
             // Form03InsertarDepartamento
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(391, 418);
+            ClientSize = new Size(391, 497);
+            Controls.Add(btnInsertarDepartamentoParams);
             Controls.Add(lblMensaje);
             Controls.Add(btnInsertarDepartamento);
             Controls.Add(txtLocalidad);
@@ -136,5 +149,6 @@
         private TextBox txtLocalidad;
         private Button btnInsertarDepartamento;
         private Label lblMensaje;
+        private Button btnInsertarDepartamentoParams;
     }
 }

@@ -30,7 +30,8 @@ namespace AdoNet
             string numero = this.txtIdDepartamento.Text;
             string nombre = this.txtNombre.Text;
             string localidad = this.txtLocalidad.Text;
-            string sql = "insert into DEPT values (" + numero + ", '" + nombre + "', '" + localidad + "')";
+            string sql = "insert into DEPT values ("
+                + numero + ", '" + nombre + "', '" + localidad + "')";
             this.com.Connection = this.cn;
             this.com.CommandType = CommandType.Text;
             this.com.CommandText = sql;
@@ -41,6 +42,36 @@ namespace AdoNet
             //AFECTADOS
             int registros = this.com.ExecuteNonQuery();
             //SALIMOS
+            this.cn.Close();
+            this.lblMensaje.Text = "Registros insertados: " + registros;
+        }
+
+        private void btnInsertarDepartamentoParams_Click(object sender, EventArgs e)
+        {
+            string sql = "insert into DEPT values (@numero, @nombre, @localidad)";
+            //DEBEMOS CREAR UN PARAMETRO POR CADA VALOR
+            //LOS VALORES DEBEN SER DEL MISMO TIPO DEL CAMPO/COLUMNA
+            int numero = int.Parse(this.txtIdDepartamento.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            //CREAMOS LOS PARAMETROS CON SUS VALORES
+            SqlParameter pamNumero = new SqlParameter();
+            pamNumero.ParameterName = "@numero";
+            pamNumero.Value = numero;
+            this.com.Parameters.Add(pamNumero);
+            SqlParameter pamNombre = new SqlParameter();
+            pamNombre.ParameterName = "@nombre";
+            pamNombre.Value = nombre;
+            this.com.Parameters.Add(pamNombre);
+            SqlParameter pamLocalidad = new SqlParameter();
+            pamLocalidad.ParameterName = "@localidad";
+            pamLocalidad.Value = localidad;
+            this.com.Parameters.Add(pamLocalidad);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int registros = this.com.ExecuteNonQuery();
             this.cn.Close();
             this.lblMensaje.Text = "Registros insertados: " + registros;
         }
