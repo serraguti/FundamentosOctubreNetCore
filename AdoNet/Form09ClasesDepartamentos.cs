@@ -13,7 +13,7 @@ namespace AdoNet
 {
     public partial class Form09ClasesDepartamentos : Form
     {
-        RepositoryDepartamentos repo; 
+        RepositoryDepartamentos repo;
 
         public Form09ClasesDepartamentos()
         {
@@ -28,6 +28,12 @@ namespace AdoNet
             string localidad = this.txtLocalidad.Text;
             //LLAMAMOS AL METODO DEL REPOSITORIO DE INSERTAR
             this.repo.InsertarDepartamento(id, nombre, localidad);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtIdDepartamento.Text);
+            this.repo.EliminarDepartamento(id);
         }
     }
 }

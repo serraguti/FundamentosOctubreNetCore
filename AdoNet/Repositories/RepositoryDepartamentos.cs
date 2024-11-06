@@ -39,5 +39,19 @@ namespace AdoNet.Repositories
             this.cn.Close();
             this.com.Parameters.Clear();
         }
+
+        public void EliminarDepartamento(int id)
+        {
+            string sql = "delete from DEPT where DEPT_NO=@id";
+            SqlParameter pamId = new SqlParameter("@id", id);
+            this.com.Parameters.Add(pamId);
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+        }
     }
 }
