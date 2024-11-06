@@ -35,5 +35,13 @@ namespace AdoNet
             int id = int.Parse(this.txtIdDepartamento.Text);
             this.repo.EliminarDepartamento(id);
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtIdDepartamento.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            this.repo.ModificarDepartamento(id, nombre, localidad);
+        }
     }
 }
