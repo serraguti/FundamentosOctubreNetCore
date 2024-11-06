@@ -29,7 +29,7 @@ namespace AdoNet
 
         private void CargarSalas()
         {
-            string sql = "select * from SALA";
+            string sql = "select distinct NOMBRE from SALA";
             this.com.Connection = this.cn;
             this.com.CommandType = CommandType.Text;
             this.com.CommandText = sql;
@@ -47,7 +47,22 @@ namespace AdoNet
 
         private void btnModificarSalas_Click(object sender, EventArgs e)
         {
-
+            string sql = "update SALA set NOMBRE=@nuevonombre where NOMBRE=@antiguonombre";
+            string antiguoNombre = this.lstSalas.SelectedItem.ToString();
+            string nuevoNombre = this.txtNuevaSala.Text;
+            SqlParameter pamNew = new SqlParameter("@nuevonombre", nuevoNombre);
+            this.com.Parameters.Add(pamNew);
+            SqlParameter pamOld = new SqlParameter("@antiguonombre", antiguoNombre);
+            this.com.Parameters.Add(pamOld);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int modificados = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            this.lblMensaje.Text = "Salas modificadas: " + modificados;
+            this.CargarSalas();
         }
     }
 }
