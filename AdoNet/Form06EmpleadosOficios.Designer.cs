@@ -51,6 +51,7 @@
             lstOficios.Name = "lstOficios";
             lstOficios.Size = new Size(288, 334);
             lstOficios.TabIndex = 1;
+            lstOficios.SelectedIndexChanged += lstOficios_SelectedIndexChanged;
             // 
             // label2
             // 
