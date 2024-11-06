@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using AdoNet.Models;
 
 namespace AdoNet.Repositories
 {
@@ -70,6 +71,41 @@ namespace AdoNet.Repositories
             this.com.ExecuteNonQuery();
             this.cn.Close();
             this.com.Parameters.Clear();
+        }
+
+        //EL SIGUIENTE METODO DEBE DEVOLVER UN CONJUNTO DE DEPARTAMENTOS
+        // List<Departamento>
+        public List<Departamento> GetDepartamentos()
+        {
+            string sql = "select * from DEPT";
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            //DEBEMOS CREAR UNA NUEVA COLECCION PARA RELLENARLA CON LOS DATOS
+            List<Departamento> departamentos = new List<Departamento>();
+            while (this.reader.Read())
+            {
+                //EXTRAEMOS LOS DATOS DEL READER
+                int id = int.Parse(this.reader["DEPT_NO"].ToString());
+                string nombre = this.reader["DNOMBRE"].ToString();
+                string localidad = this.reader["LOC"].ToString();
+                //POR CADA DATO QUE TENGAMOS EN LA TABLA, DEBEMOS CREAR 
+                //UN NUEVO MODEL DEPARTAMENTO
+                Departamento dept = new Departamento();
+                dept.IdDepartamento = id;
+                dept.Nombre = nombre;
+                dept.Localidad = localidad;
+                //CADA DEPARTAMENTO MODEL QUE HEMOS CREADO, LO DEBEMOS
+                //GUARDAR DENTRO DE LA COLECCION
+                departamentos.Add(dept);
+            }
+            //LIBERAMOS LOS RECURSOS
+            this.reader.Close();
+            this.cn.Close();
+            //DEVOLVEMOS LA COLECCION DE MODELS
+            return departamentos;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AdoNet.Repositories;
+﻿using AdoNet.Models;
+using AdoNet.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,18 @@ namespace AdoNet
         {
             InitializeComponent();
             this.repo = new RepositoryDepartamentos();
+            this.CargarDepartamentos();
+        }
+
+        public void CargarDepartamentos()
+        {
+            List<Departamento> departamentos = this.repo.GetDepartamentos();
+            this.lstDepartamentos.Items.Clear();
+            foreach (Departamento d in departamentos)
+            {
+                this.lstDepartamentos.Items.Add
+                    (d.IdDepartamento + " - " + d.Nombre + " - " + d.Localidad);
+            }
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -28,12 +41,14 @@ namespace AdoNet
             string localidad = this.txtLocalidad.Text;
             //LLAMAMOS AL METODO DEL REPOSITORIO DE INSERTAR
             this.repo.InsertarDepartamento(id, nombre, localidad);
+            this.CargarDepartamentos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(this.txtIdDepartamento.Text);
             this.repo.EliminarDepartamento(id);
+            this.CargarDepartamentos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -42,6 +57,7 @@ namespace AdoNet
             string nombre = this.txtNombre.Text;
             string localidad = this.txtLocalidad.Text;
             this.repo.ModificarDepartamento(id, nombre, localidad);
+            this.CargarDepartamentos();
         }
     }
 }
