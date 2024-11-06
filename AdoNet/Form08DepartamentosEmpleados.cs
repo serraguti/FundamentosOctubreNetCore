@@ -40,7 +40,28 @@ namespace AdoNet
 
         private void lstDepartamentos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string sql = "select EMP.APELLIDO "
+                + " from EMP "
+                + " inner join DEPT "
+                + " on EMP.DEPT_NO = DEPT.DEPT_NO "
+                + " where DEPT.DNOMBRE=@departamento";
+            string nombre = this.lstDepartamentos.SelectedItem.ToString();
+            SqlParameter pamDepartamento = new SqlParameter("@departamento", nombre);
+            this.com.Parameters.Add(pamDepartamento);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            this.lstEmpleados.Items.Clear();
+            while (this.reader.Read())
+            {
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstEmpleados.Items.Add(apellido);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
         }
     }
 }
