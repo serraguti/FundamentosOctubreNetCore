@@ -40,7 +40,24 @@ namespace AdoNet
 
         private void lstOficios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string sql = "select * from EMP where OFICIO=@oficio";
+            string oficio = this.lstOficios.SelectedItem.ToString();
+            SqlParameter pamOficio = new SqlParameter("@oficio", oficio);
+            this.com.Parameters.Add(pamOficio);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            this.lstApellidos.Items.Clear();
+            while (this.reader.Read())
+            {
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstApellidos.Items.Add(apellido);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
         }
     }
 }
