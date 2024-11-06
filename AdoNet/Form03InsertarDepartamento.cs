@@ -73,6 +73,8 @@ namespace AdoNet
             this.cn.Open();
             int registros = this.com.ExecuteNonQuery();
             this.cn.Close();
+            //CADA VEZ QUE EJECUTEMOS, DEBEMOS ELIMINAR LOS PARAMETROS DE LA COLECCION
+            this.com.Parameters.Clear();
             this.lblMensaje.Text = "Registros insertados: " + registros;
         }
     }
