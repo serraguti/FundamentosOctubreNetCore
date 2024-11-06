@@ -94,6 +94,7 @@
             btnInsertarDepartamento.TabIndex = 6;
             btnInsertarDepartamento.Text = "Insertar departamento";
             btnInsertarDepartamento.UseVisualStyleBackColor = true;
+            btnInsertarDepartamento.Click += btnInsertarDepartamento_Click;
             // 
             // lblMensaje
             // 
