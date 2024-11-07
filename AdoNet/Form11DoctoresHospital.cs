@@ -88,5 +88,20 @@ namespace AdoNet
             this.CargarDoctores(idhospital);
             MessageBox.Show("Doctores modificados " + registros);
         }
+
+        private void btnModificarEspecialidad_Click(object sender, EventArgs e)
+        {
+            //NECESITAMOS EL ITEM SELECCIONADO DEL DOCTOR
+            ListViewItem itemDoctorSeleccionado = this.lsvDoctores.SelectedItems[0];
+            //RECUPERAMOS EL ID DEL DOCTOR
+            int iddoctor = int.Parse(itemDoctorSeleccionado.Text);
+            //RECUPERAMOS LA NUEVA ESPECIALIDAD
+            string especialidad = this.txtNuevaEspecialidad.Text;
+            this.repo.ModificarEspecialidadDoctor(especialidad, iddoctor);
+            //DEBEMOS RECARGAR EL DIBUJO, PARA ELLO, RECUPERAMOS EL ITEM SELECCIONADO DEL HOSPITAL
+            ListViewItem itemHospitalSeleccionado = this.lsvHospitales.SelectedItems[0];
+            int idhospital = int.Parse(itemHospitalSeleccionado.Text);
+            this.CargarDoctores(idhospital);
+        }
     }
 }

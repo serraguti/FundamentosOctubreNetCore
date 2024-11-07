@@ -90,5 +90,17 @@ namespace AdoNet.Repositories
             this.com.Parameters.Clear();
             return registros;
         }
+
+        public void ModificarEspecialidadDoctor(string especialidad, int iddoctor)
+        {
+            string sql = "update DOCTOR set ESPECIALIDAD=@especialidad where DOCTOR_NO=@iddoctor";
+            this.com.Parameters.AddWithValue("@especialidad", especialidad);
+            this.com.Parameters.AddWithValue("@iddoctor", iddoctor);
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+        }
     }
 }
