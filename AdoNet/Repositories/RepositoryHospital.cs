@@ -42,8 +42,13 @@ namespace AdoNet.Repositories
                 hospital.Direccion = this.reader["DIRECCION"].ToString();
                 hospital.Telefono = this.reader["TELEFONO"].ToString();
                 hospital.Camas = int.Parse(this.reader["NUM_CAMA"].ToString());
-
+                //AGREGAMOS EL HOSPITAL A LA COLECCION 
+                lista.Add(hospital);
             }
+            this.reader.Close();
+            this.cn.Close();
+            //DEVOLVEMOS LA COLECCION DE HOSPITALES
+            return lista;
         }
     }
 }
