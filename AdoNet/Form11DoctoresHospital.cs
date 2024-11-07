@@ -45,7 +45,7 @@ namespace AdoNet
         {
             //EN UN EVENTO DE UN LISTVIEW, SIEMPRE DEBEMOS PREGUNTAR SI 
             //TENEMOS ALGO SELECCIONADO
-            if (this.lsvDoctores.SelectedItems.Count != 0)
+            if (this.lsvHospitales.SelectedItems.Count != 0)
             {
                 //RECUPERAMOS EL ID DEL HOSPITAL (Item seleccionado Text)
                 ListViewItem itemSeleccionado = this.lsvDoctores.SelectedItems[0];
