@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace AdoNet
 {
@@ -21,7 +22,19 @@ namespace AdoNet
         public Form02BuscadorSalarios()
         {
             InitializeComponent();
-            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;";
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            //DEBEMOS INDICAR EL NOMBRE DE NUESTRO FICHERO JSON
+            //Y LA UBICACION (PATH) DE DICHO FICHERO
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            //CONSTRUIMOS EL FICHERO PARA NUESTRA APP
+            IConfigurationRoot configuration = builder.Build();
+            //DENTRO DE UN FICHERO DE SETTINGS TENEMOS ZONAS CONOCIDAS
+            //"ConnectionStrings"...
+            //Y PARA RECUPERAR LOS VALORES, SIMPLEMENTE TENEMOS QUE SABER
+            //SU KEY (SQLExpress)
+            string connectionString = configuration.GetConnectionString("SQLExpress");
+            //string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;";
             this.cn = new SqlConnection(connectionString);
             this.com = new SqlCommand();
         }
