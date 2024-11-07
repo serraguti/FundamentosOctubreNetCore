@@ -20,14 +20,8 @@ namespace AdoNet
 
         private void btnLeerSettings_Click(object sender, EventArgs e)
         {
-            //NECESITAMOS UN CONSTRUCTOR DE CONFIGURACIONES 
-            ConfigurationBuilder builder = new ConfigurationBuilder();
-            //DEBEMOS INDICAR EL NOMBRE DE NUESTRO FICHERO JSON
-            //Y LA UBICACION (PATH) DE DICHO FICHERO
-            builder.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", false, true);
-            //CONSTRUIMOS EL FICHERO PARA NUESTRA APP
-            IConfigurationRoot configuration = builder.Build();
+            //DEBEMOS RECUPERAR CONFIGURATION DESDE PROGRAM
+            IConfigurationRoot configuation = Program.GetConfiguration();
             //DENTRO DE UN FICHERO DE SETTINGS TENEMOS ZONAS CONOCIDAS
             //"ConnectionStrings"...
             //Y PARA RECUPERAR LOS VALORES, SIMPLEMENTE TENEMOS QUE SABER

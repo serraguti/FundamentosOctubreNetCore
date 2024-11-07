@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+
 namespace AdoNet
 {
     internal static class Program
@@ -12,6 +14,15 @@ namespace AdoNet
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form12Settings());
+        }
+
+        public static IConfigurationRoot GetConfiguration()
+        {
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            IConfigurationRoot configuration = builder.Build();
+            return configuration;
         }
     }
 }
