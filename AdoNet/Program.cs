@@ -13,7 +13,7 @@ namespace AdoNet
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form12Settings());
+            Application.Run(new Form10DepartamentosListView());
         }
 
         public static IConfigurationRoot GetConfiguration()
