@@ -26,7 +26,7 @@ namespace AdoNet
             //"ConnectionStrings"...
             //Y PARA RECUPERAR LOS VALORES, SIMPLEMENTE TENEMOS QUE SABER
             //SU KEY (SQLExpress)
-            string cadenaConexion = configuration.GetConnectionString("SQLExpress");
+            string cadenaConexion = Program.GetConnectionString();
             this.lblCadenaConexion.Text = cadenaConexion;
             //SI NO ES UNA ZONA CONOCIDA (Imagenes y Colores)
             //LOS DATOS SE RECUPERAN MEDIANTE GetSection("KEY:SUBKEY")

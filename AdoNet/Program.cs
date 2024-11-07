@@ -24,5 +24,15 @@ namespace AdoNet
             IConfigurationRoot configuration = builder.Build();
             return configuration;
         }
+
+        public static string GetConnectionString()
+        {
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            IConfigurationRoot configuration = builder.Build();
+            string connectionString = configuration.GetConnectionString("SQLExpress");
+            return connectionString;
+        }
     }
 }
