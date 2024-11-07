@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,31 @@ namespace AdoNet
 
         private void btnLeerSettings_Click(object sender, EventArgs e)
         {
-
+            //NECESITAMOS UN CONSTRUCTOR DE CONFIGURACIONES 
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            //DEBEMOS INDICAR EL NOMBRE DE NUESTRO FICHERO JSON
+            //Y LA UBICACION (PATH) DE DICHO FICHERO
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            //CONSTRUIMOS EL FICHERO PARA NUESTRA APP
+            IConfigurationRoot configuration = builder.Build();
+            //DENTRO DE UN FICHERO DE SETTINGS TENEMOS ZONAS CONOCIDAS
+            //"ConnectionStrings"...
+            //Y PARA RECUPERAR LOS VALORES, SIMPLEMENTE TENEMOS QUE SABER
+            //SU KEY (SQLExpress)
+            string cadenaConexion = configuration.GetConnectionString("SQLExpress");
+            this.lblCadenaConexion.Text = cadenaConexion;
+            //SI NO ES UNA ZONA CONOCIDA (Imagenes y Colores)
+            //LOS DATOS SE RECUPERAN MEDIANTE GetSection("KEY:SUBKEY")
+            string imagen1 = configuration.GetSection("Imagenes:imagen1").Value;
+            string imagen2 = configuration.GetSection("Imagenes:imagen2").Value;
+            //this.pictureBox1.Image = Image.FromFile("ruta de mi ordenador");
+            this.pictureBox1.Load(imagen1);
+            this.pictureBox2.Load(imagen2);
+            string colorFondo = configuration.GetSection("Colores:fondo").Value;
+            string colorLetra = configuration.GetSection("Colores:letra").Value;
+            this.btnLeerSettings.BackColor = Color.FromName(colorFondo);
+            this.btnLeerSettings.ForeColor = Color.FromName(colorLetra);
         }
     }
 }
