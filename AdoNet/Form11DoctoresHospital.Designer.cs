@@ -45,6 +45,9 @@
             label3 = new Label();
             txtIncrementoSalarial = new TextBox();
             btnIncrementar = new Button();
+            label4 = new Label();
+            txtNuevaEspecialidad = new TextBox();
+            btnModificarEspecialidad = new Button();
             SuspendLayout();
             // 
             // label1
@@ -164,11 +167,39 @@
             btnIncrementar.UseVisualStyleBackColor = true;
             btnIncrementar.Click += btnIncrementar_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(856, 216);
+            label4.Name = "label4";
+            label4.Size = new Size(193, 30);
+            label4.TabIndex = 7;
+            label4.Text = "Nueva especialidad";
+            // 
+            // txtNuevaEspecialidad
+            // 
+            txtNuevaEspecialidad.Location = new Point(857, 249);
+            txtNuevaEspecialidad.Name = "txtNuevaEspecialidad";
+            txtNuevaEspecialidad.Size = new Size(199, 35);
+            txtNuevaEspecialidad.TabIndex = 8;
+            // 
+            // btnModificarEspecialidad
+            // 
+            btnModificarEspecialidad.Location = new Point(856, 298);
+            btnModificarEspecialidad.Name = "btnModificarEspecialidad";
+            btnModificarEspecialidad.Size = new Size(200, 77);
+            btnModificarEspecialidad.TabIndex = 9;
+            btnModificarEspecialidad.Text = "Modificar especialidad";
+            btnModificarEspecialidad.UseVisualStyleBackColor = true;
+            // 
             // Form11DoctoresHospital
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1083, 621);
+            Controls.Add(btnModificarEspecialidad);
+            Controls.Add(txtNuevaEspecialidad);
+            Controls.Add(label4);
             Controls.Add(btnIncrementar);
             Controls.Add(txtIncrementoSalarial);
             Controls.Add(label3);
@@ -203,5 +234,8 @@
         private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
         private ColumnHeader columnHeader10;
+        private Label label4;
+        private TextBox txtNuevaEspecialidad;
+        private Button btnModificarEspecialidad;
     }
 }
