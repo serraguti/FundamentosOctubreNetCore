@@ -28,7 +28,22 @@ namespace AdoNet.Repositories
         {
             string sql = "select * from HOSPITAL";
             this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            //CREAMOS LA COLECCION DE HOSPITALES
+            List<Hospital> lista = new List<Hospital>();
+            while (this.reader.Read())
+            {
+                //CREAMOS UN OBJETO HOSPITAL POR CADA FILA
+                Hospital hospital = new Hospital();
+                //ASIGNAMOS LOS VALORES DEL READER A CADA PROPIEDAD DEL HOSPITAL
+                hospital.IdHospital = int.Parse(this.reader["HOSPITAL_COD"].ToString());
+                hospital.Nombre = this.reader["NOMBRE"].ToString();
+                hospital.Direccion = this.reader["DIRECCION"].ToString();
+                hospital.Telefono = this.reader["TELEFONO"].ToString();
+                hospital.Camas = int.Parse(this.reader["NUM_CAMA"].ToString());
 
+            }
         }
     }
 }
