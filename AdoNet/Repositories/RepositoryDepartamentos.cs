@@ -17,7 +17,7 @@ namespace AdoNet.Repositories
         //EN EL CONSTRUCTOR LO QUE HAREMOS SERA INSTANCIAR LOS OBJETOS
         public RepositoryDepartamentos()
         {
-            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;";
+            string connectionString = Program.GetConnectionString();
             this.cn = new SqlConnection(connectionString);
             this.com = new SqlCommand();
         }

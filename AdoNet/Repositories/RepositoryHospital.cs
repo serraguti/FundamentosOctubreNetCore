@@ -16,7 +16,7 @@ namespace AdoNet.Repositories
 
         public RepositoryHospital()
         {
-            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;";
+            string connectionString = Program.GetConnectionString();
             this.cn = new SqlConnection(connectionString);
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
