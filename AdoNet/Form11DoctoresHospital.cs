@@ -40,5 +40,39 @@ namespace AdoNet
                 this.lsvHospitales.Items.Add(item);
             }
         }
+
+        private void lsvHospitales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //EN UN EVENTO DE UN LISTVIEW, SIEMPRE DEBEMOS PREGUNTAR SI 
+            //TENEMOS ALGO SELECCIONADO
+            if (this.lsvDoctores.SelectedItems.Count != 0)
+            {
+                //RECUPERAMOS EL ID DEL HOSPITAL (Item seleccionado Text)
+                ListViewItem itemSeleccionado = this.lsvDoctores.SelectedItems[0];
+                //RECUPERAMOS EL CODIGO DEL HOSPITAL
+                int idhospital = int.Parse(itemSeleccionado.Text);
+                //CARGAMOS LOS DOCTORES
+                this.CargarDoctores(idhospital);
+            }
+        }
+
+        //METODO PARA CARGAR LOS DOCTORES DE UN HOSPITAL
+        private void CargarDoctores(int idhospital)
+        {
+            List<Doctor> doctores = this.repo.GetDoctoresHospital(idhospital);
+            this.lsvDoctores.Items.Clear();
+            foreach (Doctor doc in doctores)
+            {
+                //CREAMOS UN LISTVIEWITEM POR CADA DOCTOR
+                ListViewItem item = new ListViewItem();
+                item.Text = doc.IdDoctor.ToString();
+                item.SubItems.Add(doc.Apellido);
+                item.SubItems.Add(doc.Especialidad);
+                item.SubItems.Add(doc.Salario.ToString());
+                item.SubItems.Add(doc.IdHospital.ToString());
+                //AGREGAMOS EL ITEM AL DIBUJO DEL LISTVIEW
+                this.lsvDoctores.Items.Add(item);
+            }
+        }
     }
 }

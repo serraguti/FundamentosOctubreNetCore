@@ -30,21 +30,21 @@
         {
             label1 = new Label();
             lsvHospitales = new ListView();
-            label2 = new Label();
-            lsvDoctores = new ListView();
-            label3 = new Label();
-            txtIncrementoSalarial = new TextBox();
-            btnIncrementar = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            label2 = new Label();
+            lsvDoctores = new ListView();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
+            label3 = new Label();
+            txtIncrementoSalarial = new TextBox();
+            btnIncrementar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -66,51 +66,7 @@
             lsvHospitales.TabIndex = 1;
             lsvHospitales.UseCompatibleStateImageBehavior = false;
             lsvHospitales.View = View.Details;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(31, 345);
-            label2.Name = "label2";
-            label2.Size = new Size(96, 30);
-            label2.TabIndex = 2;
-            label2.Text = "Doctores";
-            // 
-            // lsvDoctores
-            // 
-            lsvDoctores.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
-            lsvDoctores.FullRowSelect = true;
-            lsvDoctores.Location = new Point(33, 376);
-            lsvDoctores.Name = "lsvDoctores";
-            lsvDoctores.Size = new Size(785, 220);
-            lsvDoctores.TabIndex = 3;
-            lsvDoctores.UseCompatibleStateImageBehavior = false;
-            lsvDoctores.View = View.Details;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(842, 18);
-            label3.Name = "label3";
-            label3.Size = new Size(189, 30);
-            label3.TabIndex = 4;
-            label3.Text = "Incremento salarial";
-            // 
-            // txtIncrementoSalarial
-            // 
-            txtIncrementoSalarial.Location = new Point(848, 50);
-            txtIncrementoSalarial.Name = "txtIncrementoSalarial";
-            txtIncrementoSalarial.Size = new Size(208, 35);
-            txtIncrementoSalarial.TabIndex = 5;
-            // 
-            // btnIncrementar
-            // 
-            btnIncrementar.Location = new Point(850, 94);
-            btnIncrementar.Name = "btnIncrementar";
-            btnIncrementar.Size = new Size(206, 90);
-            btnIncrementar.TabIndex = 6;
-            btnIncrementar.Text = "Incrementar salarios";
-            btnIncrementar.UseVisualStyleBackColor = true;
+            lsvHospitales.SelectedIndexChanged += lsvHospitales_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -137,6 +93,26 @@
             columnHeader5.Text = "Camas";
             columnHeader5.Width = 120;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(31, 345);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 30);
+            label2.TabIndex = 2;
+            label2.Text = "Doctores";
+            // 
+            // lsvDoctores
+            // 
+            lsvDoctores.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            lsvDoctores.FullRowSelect = true;
+            lsvDoctores.Location = new Point(33, 376);
+            lsvDoctores.Name = "lsvDoctores";
+            lsvDoctores.Size = new Size(785, 220);
+            lsvDoctores.TabIndex = 3;
+            lsvDoctores.UseCompatibleStateImageBehavior = false;
+            lsvDoctores.View = View.Details;
+            // 
             // columnHeader6
             // 
             columnHeader6.Text = "ID";
@@ -161,6 +137,31 @@
             // 
             columnHeader10.Text = "Hospital";
             columnHeader10.Width = 120;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(842, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(189, 30);
+            label3.TabIndex = 4;
+            label3.Text = "Incremento salarial";
+            // 
+            // txtIncrementoSalarial
+            // 
+            txtIncrementoSalarial.Location = new Point(848, 50);
+            txtIncrementoSalarial.Name = "txtIncrementoSalarial";
+            txtIncrementoSalarial.Size = new Size(208, 35);
+            txtIncrementoSalarial.TabIndex = 5;
+            // 
+            // btnIncrementar
+            // 
+            btnIncrementar.Location = new Point(850, 94);
+            btnIncrementar.Name = "btnIncrementar";
+            btnIncrementar.Size = new Size(206, 90);
+            btnIncrementar.TabIndex = 6;
+            btnIncrementar.Text = "Incrementar salarios";
+            btnIncrementar.UseVisualStyleBackColor = true;
             // 
             // Form11DoctoresHospital
             // 

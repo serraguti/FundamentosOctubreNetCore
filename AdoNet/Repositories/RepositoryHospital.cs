@@ -50,5 +50,32 @@ namespace AdoNet.Repositories
             //DEVOLVEMOS LA COLECCION DE HOSPITALES
             return lista;
         }
+
+        //METODO PARA DEVOLVER LOS DOCTORES POR ID DE HOSPITAL
+        public List<Doctor> GetDoctoresHospital(int idhospital)
+        {
+            string sql = "select * from DOCTOR where HOSPITAL_COD=@idhospital";
+            this.com.Parameters.AddWithValue("@idhospital", idhospital);
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            //CREAMOS LA COLECCION A DEVOLVER
+            List<Doctor> lista = new List<Doctor>();
+            while (this.reader.Read())
+            {
+                //CREAMOS UN DOCTOR POR CADA FILA DEL READER
+                Doctor doc = new Doctor();
+                doc.IdDoctor = int.Parse(this.reader["DOCTOR_NO"].ToString());
+                doc.Apellido = this.reader["APELLIDO"].ToString();
+                doc.Especialidad = this.reader["ESPECIALIDAD"].ToString();
+                doc.Salario = int.Parse(this.reader["SALARIO"].ToString());
+                doc.IdHospital = int.Parse(this.reader["HOSPITAL_COD"].ToString());
+                lista.Add(doc);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            return lista;
+        }
     }
 }
