@@ -48,7 +48,7 @@ namespace AdoNet
             if (this.lsvHospitales.SelectedItems.Count != 0)
             {
                 //RECUPERAMOS EL ID DEL HOSPITAL (Item seleccionado Text)
-                ListViewItem itemSeleccionado = this.lsvDoctores.SelectedItems[0];
+                ListViewItem itemSeleccionado = this.lsvHospitales.SelectedItems[0];
                 //RECUPERAMOS EL CODIGO DEL HOSPITAL
                 int idhospital = int.Parse(itemSeleccionado.Text);
                 //CARGAMOS LOS DOCTORES
