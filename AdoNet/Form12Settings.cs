@@ -21,7 +21,7 @@ namespace AdoNet
         private void btnLeerSettings_Click(object sender, EventArgs e)
         {
             //DEBEMOS RECUPERAR CONFIGURATION DESDE PROGRAM
-            IConfigurationRoot configuation = Program.GetConfiguration();
+            IConfigurationRoot configuration = Program.GetConfiguration();
             //DENTRO DE UN FICHERO DE SETTINGS TENEMOS ZONAS CONOCIDAS
             //"ConnectionStrings"...
             //Y PARA RECUPERAR LOS VALORES, SIMPLEMENTE TENEMOS QUE SABER
