@@ -74,5 +74,19 @@ namespace AdoNet
                 this.lsvDoctores.Items.Add(item);
             }
         }
+
+        private void btnIncrementar_Click(object sender, EventArgs e)
+        {
+            //HOSPITAL SELECCIONADO EN EL LISTVIEW
+            ListViewItem itemSeleccionado = this.lsvHospitales.SelectedItems[0];
+            //RECUPERAMOS EL ID DEL HOSPITAL QUE EL TEXT
+            int idhospital = int.Parse(itemSeleccionado.Text);
+            int incremento = int.Parse(this.txtIncrementoSalarial.Text);
+            //LLAMAMOS AL REPOSITORIO E INCREMENTAMOS
+            int registros = this.repo.IncrementarSalarioDoctores(incremento, idhospital);
+            //RECARGAMOS LA LISTA DE LOS DOCTORES
+            this.CargarDoctores(idhospital);
+            MessageBox.Show("Doctores modificados " + registros);
+        }
     }
 }

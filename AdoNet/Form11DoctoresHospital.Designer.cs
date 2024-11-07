@@ -162,6 +162,7 @@
             btnIncrementar.TabIndex = 6;
             btnIncrementar.Text = "Incrementar salarios";
             btnIncrementar.UseVisualStyleBackColor = true;
+            btnIncrementar.Click += btnIncrementar_Click;
             // 
             // Form11DoctoresHospital
             // 
