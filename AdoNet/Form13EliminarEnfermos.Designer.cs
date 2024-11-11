@@ -30,13 +30,13 @@
         {
             label1 = new Label();
             lsvEnfermos = new ListView();
-            btnEliminarEnfermo = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
+            btnEliminarEnfermo = new Button();
             SuspendLayout();
             // 
             // label1
@@ -58,17 +58,6 @@
             lsvEnfermos.TabIndex = 1;
             lsvEnfermos.UseCompatibleStateImageBehavior = false;
             lsvEnfermos.View = View.Details;
-            // 
-            // btnEliminarEnfermo
-            // 
-            btnEliminarEnfermo.BackColor = Color.Red;
-            btnEliminarEnfermo.ForeColor = Color.White;
-            btnEliminarEnfermo.Location = new Point(27, 369);
-            btnEliminarEnfermo.Name = "btnEliminarEnfermo";
-            btnEliminarEnfermo.Size = new Size(223, 65);
-            btnEliminarEnfermo.TabIndex = 2;
-            btnEliminarEnfermo.Text = "Eliminar enfermo";
-            btnEliminarEnfermo.UseVisualStyleBackColor = false;
             // 
             // columnHeader1
             // 
@@ -99,6 +88,18 @@
             // 
             columnHeader6.Text = "NSS";
             columnHeader6.Width = 150;
+            // 
+            // btnEliminarEnfermo
+            // 
+            btnEliminarEnfermo.BackColor = Color.Red;
+            btnEliminarEnfermo.ForeColor = Color.White;
+            btnEliminarEnfermo.Location = new Point(27, 369);
+            btnEliminarEnfermo.Name = "btnEliminarEnfermo";
+            btnEliminarEnfermo.Size = new Size(223, 65);
+            btnEliminarEnfermo.TabIndex = 2;
+            btnEliminarEnfermo.Text = "Eliminar enfermo";
+            btnEliminarEnfermo.UseVisualStyleBackColor = false;
+            btnEliminarEnfermo.Click += btnEliminarEnfermo_Click;
             // 
             // Form13EliminarEnfermos
             // 
