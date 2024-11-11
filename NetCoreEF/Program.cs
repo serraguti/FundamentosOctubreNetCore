@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreEF.Data;
 using NetCoreEF.Repositories;
@@ -22,8 +23,13 @@ namespace NetCoreEF
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            IConfigurationRoot configuration = builder.Build();
             //RECUPERAMOS LA CADENA DE CONEXION DIRECTAMENTE AQUI ESCRITA
-            string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Trust Server Certificate=True";
+            string connectionString =
+                configuration.GetConnectionString("HospitalSQLServer");
             //NECESITAMOS UN OBJETO LLAMADO ServiceProvider QUE ES EL ENCARGADO DE RESOLVER LAS 
             //DEPENDENCIAS
             //CADA CLASE DEBEMOS INCLUIRLA DEPENDIENDO DE SU TIPO
