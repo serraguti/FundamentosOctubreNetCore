@@ -45,5 +45,13 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        public List<Empleado> GetEmpleadosDepartamento(int iddepartamento)
+        {
+            var consulta = from datos in this.context.Empleados
+                           where datos.IdDepartamento == iddepartamento
+                           select datos;
+            return consulta.ToList();
+        }
     }
 }

@@ -59,6 +59,7 @@
             btnBuscarEmpleados.TabIndex = 2;
             btnBuscarEmpleados.Text = "Buscar empleados";
             btnBuscarEmpleados.UseVisualStyleBackColor = true;
+            btnBuscarEmpleados.Click += btnBuscarEmpleados_Click;
             // 
             // label2
             // 
