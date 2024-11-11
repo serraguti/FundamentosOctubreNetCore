@@ -26,10 +26,16 @@ namespace NetCoreEF
         private void btnCargarHospitales_Click(object sender, EventArgs e)
         {
             List<Hospital> hospitales = this.repo.GetHospitales();
-            this.lstHospitales.Items.Clear();
+            this.lsvHospitales.Items.Clear();
             foreach (Hospital h in hospitales)
             {
-                this.lstHospitales.Items.Add(h.Nombre);
+                ListViewItem item = new ListViewItem();
+                item.Text = h.IdHospital.ToString();
+                item.SubItems.Add(h.Nombre);
+                item.SubItems.Add(h.Direccion);
+                item.SubItems.Add(h.Telefono);
+                item.SubItems.Add(h.Camas.ToString());
+                this.lsvHospitales.Items.Add(item);
             }
         }
     }
