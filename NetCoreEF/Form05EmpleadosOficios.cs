@@ -21,11 +21,17 @@ namespace NetCoreEF
         {
             InitializeComponent();
             this.repo = Program.provider.GetService<RepositoryEmpleados>();
-            //RECUPERAMOS TODOS LOS EMPLEADOS Y DIBUJAMOS LOS OFICIOS EN LA LISTA
+            //REALIZAMOS UNA CONSULTA PARA RECUPERAR LOS DIFERENTES OFICIOS
+            List<string> oficios = this.repo.GetOficios();
+            foreach (string ofi in oficios)
+            {
+                this.lstOficios.Items.Add(ofi);
+            }
+            //RECUPERAMOS TODOS LOS EMPLEADOS Y DIBUJAMOS TODOS LOS EMPLEADOS
+            //AL INICIO DE LA APLICACION
             List<Empleado> empleados = this.repo.GetEmpleados();
             foreach (Empleado emp in empleados)
             {
-                this.lstOficios.Items.Add(emp.Oficio);
                 this.lstEmpleados.Items.Add(emp.Apellido + " - " + emp.Oficio);
             }
         }

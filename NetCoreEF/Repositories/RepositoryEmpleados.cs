@@ -53,5 +53,12 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        public List<string> GetOficios()
+        {
+            var consulta = (from datos in this.context.Empleados
+                            select datos.Oficio).Distinct();
+            return consulta.ToList();
+        }
     }
 }
