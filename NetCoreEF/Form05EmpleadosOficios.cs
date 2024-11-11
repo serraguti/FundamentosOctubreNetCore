@@ -38,7 +38,13 @@ namespace NetCoreEF
 
         private void lstOficios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string oficio = this.lstOficios.SelectedItem.ToString();
+            List<Empleado> empleados = this.repo.GetEmpleadosOficio(oficio);
+            this.lstEmpleados.Items.Clear();
+            foreach (Empleado emp in empleados)
+            {
+                this.lstEmpleados.Items.Add(emp.Apellido + " - " + emp.Oficio);
+            }
         }
     }
 }
