@@ -42,7 +42,10 @@ namespace AdoNet
 
         private void btnEliminarEnfermo_Click(object sender, EventArgs e)
         {
-
+            ListViewItem itemSeleccionado = this.lsvEnfermos.SelectedItems[0];
+            int inscripcion = int.Parse(itemSeleccionado.Text);
+            this.repo.EliminarEnfermo(inscripcion);
+            this.CargarEnfermos();
         }
     }
 }
