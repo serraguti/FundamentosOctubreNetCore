@@ -46,7 +46,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form04Hospitales());
+            Application.Run(new Form05EmpleadosOficios());
         }
     }
 }
