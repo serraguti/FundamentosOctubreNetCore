@@ -40,12 +40,13 @@ namespace NetCoreEF
             //ALMACENAMOS LAS CLASES EN EL PROVIDER
             provider = new ServiceCollection()
                 .AddTransient<RepositoryEmpleados>()
+                .AddTransient<RepositoryHospital>()
                 .AddDbContext<EmpleadosContext>
                 (options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form03BuscadorEmpleadosDepartamento());
+            Application.Run(new Form04Hospitales());
         }
     }
 }
