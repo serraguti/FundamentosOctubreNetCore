@@ -45,7 +45,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form02BuscadorEmpleados());
+            Application.Run(new Form03BuscadorEmpleadosDepartamento());
         }
     }
 }
