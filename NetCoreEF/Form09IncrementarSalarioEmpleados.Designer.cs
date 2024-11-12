@@ -32,12 +32,12 @@
             lstOficios = new ListBox();
             label2 = new Label();
             lsvEmpleados = new ListView();
-            label3 = new Label();
-            txtIncrementoSalarial = new TextBox();
-            btnIncrementarSalarios = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            label3 = new Label();
+            txtIncrementoSalarial = new TextBox();
+            btnIncrementarSalarios = new Button();
             SuspendLayout();
             // 
             // label1
@@ -78,6 +78,22 @@
             lsvEmpleados.UseCompatibleStateImageBehavior = false;
             lsvEmpleados.View = View.Details;
             // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "APELLIDO";
+            columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "OFICIO";
+            columnHeader2.Width = 160;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "SALARIO";
+            columnHeader3.TextAlign = HorizontalAlignment.Right;
+            columnHeader3.Width = 150;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -102,22 +118,7 @@
             btnIncrementarSalarios.TabIndex = 6;
             btnIncrementarSalarios.Text = "Incrementar salarios";
             btnIncrementarSalarios.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "APELLIDO";
-            columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "OFICIO";
-            columnHeader2.Width = 160;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "SALARIO";
-            columnHeader3.TextAlign = HorizontalAlignment.Right;
-            columnHeader3.Width = 150;
+            btnIncrementarSalarios.Click += btnIncrementarSalarios_Click;
             // 
             // Form09IncrementarSalarioEmpleados
             // 

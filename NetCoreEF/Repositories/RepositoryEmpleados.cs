@@ -87,5 +87,18 @@ namespace NetCoreEF.Repositories
             resumen.MinimoSalario = minimo;
             return resumen;
         }
+
+        public void IncrementarSalarioEmpleados(string oficio, int incremento)
+        {
+            //DEBEMOS RECUPERAR LOS EMPLEADOS DE UN OFICIO
+            List<Empleado> empleados = this.GetEmpleadosOficio(oficio);
+            //RECORREMOS LOS DATOS DE LOS EMPLEADOS Y MODIFICAMOS SU SALARIO
+            foreach (Empleado emp in empleados)
+            {
+                emp.Salario = emp.Salario + incremento;
+            }
+            //GUARDAMOS LOS CAMBIOS EN LA BASE DE DATOS Y LO TENEMOS
+            this.context.SaveChanges();
+        }
     }
 }
