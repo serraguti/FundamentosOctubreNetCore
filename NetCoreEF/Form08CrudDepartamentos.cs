@@ -21,6 +21,7 @@ namespace NetCoreEF
         {
             InitializeComponent();
             this.repo = Program.provider.GetService<RepositoryDepartamentos>();
+            this.CargarDepartamentos();
         }
 
         private void CargarDepartamentos()
