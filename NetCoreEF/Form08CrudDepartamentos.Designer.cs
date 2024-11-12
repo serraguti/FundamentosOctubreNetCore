@@ -146,6 +146,7 @@
             btnModificarDepartamento.TabIndex = 9;
             btnModificarDepartamento.Text = "Modificar departamento";
             btnModificarDepartamento.UseVisualStyleBackColor = true;
+            btnModificarDepartamento.Click += btnModificarDepartamento_Click;
             // 
             // btnEliminarDepartamento
             // 

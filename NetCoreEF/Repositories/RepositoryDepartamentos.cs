@@ -45,5 +45,17 @@ namespace NetCoreEF.Repositories
             //GUARDAMOS LOS DATOS EN LA BASE DE DATOS
             this.context.SaveChanges();
         }
+
+        public void ModificarDepartamento(int id, string nombre, string localidad)
+        {
+            //BUSCAMOS EL DEPARTAMENTO QUE NECESITAMOS MODIFICAR
+            Departamento departamento = this.FindDepartamento(id);
+            //MODIFICAMOS SUS PROPIEDADES
+            departamento.Nombre = nombre;
+            departamento.Localidad = localidad;
+            //NO TENEMOS METODO PARA MODIFICAR, SIMPLEMENTE
+            //LE DEBEMOS INDICAR QUE GUARDAMOS CAMBIOS
+            this.context.SaveChanges();
+        }
     }
 }
