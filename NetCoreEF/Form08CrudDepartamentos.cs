@@ -53,10 +53,9 @@ namespace NetCoreEF
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(this.txtIdDepartamento.Text);
             string nombre = this.txtNombre.Text;
             string localidad = this.txtLocalidad.Text;
-            this.repo.InsertarDepartamento(id, nombre, localidad);
+            this.repo.InsertarDepartamento(nombre, localidad);
             this.CargarDepartamentos();
             this.txtIdDepartamento.Text = "";
             this.txtNombre.Text = "";

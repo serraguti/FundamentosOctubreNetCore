@@ -32,12 +32,31 @@ namespace NetCoreEF.Repositories
             return consulta.First();
         }
 
-        public void InsertarDepartamento(int id, string nombre, string localidad)
+        private int GetMaxIdDepartamento()
+        {
+            var consulta = from datos in this.context.Departamentos
+                           select datos;
+            //EN ESTA ACCION, TENEMOS DOS POSIBILIDADES
+            //1) PUEDE SER QUE NO TENGAMOS DATOS EN LA TABLA, POR LO QUE
+            //MAX NOS OFRECE UN NULL Y NO FUNCIONARIA
+            //2) TENEMOS DATOS Y DEVOLVEMOS EL MAXIMO
+            if (consulta.Count() == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                int maximo = consulta.Max(z => z.IdDepartamento) + 1;
+                return maximo;
+            }
+        }
+
+        public void InsertarDepartamento(string nombre, string localidad)
         {
             //CREAMOS UN NUEVO MODELO DE DEPARTAMENTO
             Departamento departamento = new Departamento();
             //ASIGNAMOS SUS PROPIEDADES
-            departamento.IdDepartamento = id;
+            departamento.IdDepartamento = this.GetMaxIdDepartamento();
             departamento.Nombre = nombre;
             departamento.Localidad = localidad;
             //AÑADIMOS EL MODELO DEPARTAMENTO AL CONTEXT
