@@ -41,12 +41,13 @@ namespace NetCoreEF
             provider = new ServiceCollection()
                 .AddTransient<RepositoryEmpleados>()
                 .AddTransient<RepositoryHospital>()
+                .AddTransient<RepositoryVistaEmpleados>()
                 .AddDbContext<EmpleadosContext>
                 (options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form05EmpleadosOficios());
+            Application.Run(new Form06VistaEmpleados());
         }
     }
 }

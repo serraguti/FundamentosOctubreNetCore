@@ -18,5 +18,7 @@ namespace NetCoreEF.Data
         //CONTENDRA UNA COLECCION DBSET CON LOS MODELOS
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Hospital> Hospitales { get; set; }
+
+        public DbSet<EmpleadoDepartamento> EmpleadosDepartamentos { get; set; }
     }
 }
