@@ -136,6 +136,7 @@
             btnInsertar.TabIndex = 8;
             btnInsertar.Text = "Insertar departamento";
             btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.Click += btnInsertar_Click;
             // 
             // btnModificarDepartamento
             // 

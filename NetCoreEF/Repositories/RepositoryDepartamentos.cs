@@ -31,5 +31,19 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.First();
         }
+
+        public void InsertarDepartamento(int id, string nombre, string localidad)
+        {
+            //CREAMOS UN NUEVO MODELO DE DEPARTAMENTO
+            Departamento departamento = new Departamento();
+            //ASIGNAMOS SUS PROPIEDADES
+            departamento.IdDepartamento = id;
+            departamento.Nombre = nombre;
+            departamento.Localidad = localidad;
+            //AÑADIMOS EL MODELO DEPARTAMENTO AL CONTEXT
+            this.context.Departamentos.Add(departamento);
+            //GUARDAMOS LOS DATOS EN LA BASE DE DATOS
+            this.context.SaveChanges();
+        }
     }
 }
