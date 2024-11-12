@@ -57,5 +57,16 @@ namespace NetCoreEF.Repositories
             //LE DEBEMOS INDICAR QUE GUARDAMOS CAMBIOS
             this.context.SaveChanges();
         }
+
+        public void EliminarDepartamento(int id)
+        {
+            //BUSCAMOS EL DEPARTAMENTO QUE DESEAMOS ELIMINAR
+            Departamento departamento = this.FindDepartamento(id);
+            //TENEMOS EL METODO Remove DE LA COLECCION DBSET DEL CONTEXT
+            //PARA ELIMINAR EL OBJETO
+            this.context.Departamentos.Remove(departamento);
+            //GUARDAMOS LOS DATOS EN LA BASE DE DATOS
+            this.context.SaveChanges();
+        }
     }
 }

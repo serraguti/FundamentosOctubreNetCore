@@ -74,5 +74,16 @@ namespace NetCoreEF
             this.txtNombre.Text = "";
             this.txtLocalidad.Text = "";
         }
+
+        private void btnEliminarDepartamento_Click(object sender, EventArgs e)
+        {
+            ListViewItem itemSeleccionado = this.lsvDepartamentos.SelectedItems[0];
+            int id = int.Parse(itemSeleccionado.Text);
+            this.repo.EliminarDepartamento(id);
+            this.CargarDepartamentos();
+            this.txtIdDepartamento.Text = "";
+            this.txtNombre.Text = "";
+            this.txtLocalidad.Text = "";
+        }
     }
 }

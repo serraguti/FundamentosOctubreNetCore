@@ -158,6 +158,7 @@
             btnEliminarDepartamento.TabIndex = 10;
             btnEliminarDepartamento.Text = "Eliminar departamento";
             btnEliminarDepartamento.UseVisualStyleBackColor = false;
+            btnEliminarDepartamento.Click += btnEliminarDepartamento_Click;
             // 
             // Form08CrudDepartamentos
             // 
