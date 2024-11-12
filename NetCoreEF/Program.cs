@@ -39,6 +39,7 @@ namespace NetCoreEF
             //PROVEEDOR: SQL Server: UseSqlServer(cadena conexion)  My SQL: UseMySql(cadena conexion)
             //ALMACENAMOS LAS CLASES EN EL PROVIDER
             provider = new ServiceCollection()
+                .AddTransient<RepositoryDepartamentos>()
                 .AddTransient<RepositoryEmpleados>()
                 .AddTransient<RepositoryHospital>()
                 .AddTransient<RepositoryVistaEmpleados>()
@@ -47,7 +48,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form07LambdaEmpleados());
+            Application.Run(new Form08CrudDepartamentos());
         }
     }
 }

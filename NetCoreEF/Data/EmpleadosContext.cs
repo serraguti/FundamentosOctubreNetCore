@@ -14,7 +14,7 @@ namespace NetCoreEF.Data
         //DE LA BASE DE DATOS COMO LA CADENA DE CONEXION
         public EmpleadosContext(DbContextOptions<EmpleadosContext> options) 
             : base(options) { }
-
+        public DbSet<Departamento> Departamentos { get; set; }
         //CONTENDRA UNA COLECCION DBSET CON LOS MODELOS
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Hospital> Hospitales { get; set; }
