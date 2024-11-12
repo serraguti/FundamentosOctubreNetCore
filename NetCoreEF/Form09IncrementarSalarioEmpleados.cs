@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using NetCoreEF.Models;
 using NetCoreEF.Repositories;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,19 @@ namespace NetCoreEF
 
         private void btnIncrementarSalarios_Click(object sender, EventArgs e)
         {
-
+            string oficio = this.lstOficios.SelectedItem.ToString();
+            int incremento = int.Parse(this.txtIncrementoSalarial.Text);
+            this.repo.IncrementarSalarioEmpleados(oficio, incremento);
+            List<Empleado> empleados = this.repo.GetEmpleadosOficio(oficio);
+            this.lsvEmpleados.Items.Clear();
+            foreach (Empleado emp in empleados)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = emp.Apellido;
+                item.SubItems.Add(emp.Oficio);
+                item.SubItems.Add(emp.Salario.ToString());
+                this.lsvEmpleados.Items.Add(item);
+            }
         }
     }
 }
