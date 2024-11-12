@@ -23,5 +23,13 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        public Departamento FindDepartamento(int id)
+        {
+            var consulta = from datos in this.context.Departamentos
+                           where datos.IdDepartamento == id
+                           select datos;
+            return consulta.First();
+        }
     }
 }

@@ -37,5 +37,18 @@ namespace NetCoreEF
                 this.lsvDepartamentos.Items.Add(item);
             }
         }
+
+        private void lsvDepartamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lsvDepartamentos.SelectedItems.Count != 0)
+            {
+                ListViewItem itemSeleccionado = this.lsvDepartamentos.SelectedItems[0];
+                int id = int.Parse(itemSeleccionado.Text);
+                Departamento departamento = this.repo.FindDepartamento(id);
+                this.txtIdDepartamento.Text = departamento.IdDepartamento.ToString();
+                this.txtNombre.Text = departamento.Nombre;
+                this.txtLocalidad.Text = departamento.Localidad;
+            }
+        }
     }
 }
