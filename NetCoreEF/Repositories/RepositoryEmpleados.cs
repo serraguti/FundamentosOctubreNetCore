@@ -60,5 +60,32 @@ namespace NetCoreEF.Repositories
                             select datos.Oficio).Distinct();
             return consulta.ToList();
         }
+
+        public List<int> GetNumerosDepartamento()
+        {
+            var consulta = (from datos in this.context.Empleados
+                           select datos.IdDepartamento).Distinct();
+            return consulta.ToList();
+        }
+
+        public ResumenEmpleados GetResumenEmpleadosDepartamento(int idDepartamento)
+        {
+            //REALIZAMOS UNA CONSULTA PARA LOS EMPLEADOS POR DEPARTAMENTO
+            var consulta = from datos in this.context.Empleados
+                           where datos.IdDepartamento == idDepartamento
+                           select datos;
+            //QUEREMOS SABER EL NUMERO DE PERSONAS
+            int personas = consulta.Count();
+            //NECESITAMOS EL MAXIMO SALARIO
+            int maximo = consulta.Max(x => x.Salario);
+            //RECUPERAMOS EL MINIMO SALARIO
+            int minimo = consulta.Min(x => x.Salario);
+            ResumenEmpleados resumen = new ResumenEmpleados();
+            resumen.Empleados = consulta.ToList();
+            resumen.Personas = personas;
+            resumen.MaximoSalario = maximo;
+            resumen.MinimoSalario = minimo;
+            return resumen;
+        }
     }
 }

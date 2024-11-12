@@ -47,7 +47,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
 
-            Application.Run(new Form06VistaEmpleados());
+            Application.Run(new Form07LambdaEmpleados());
         }
     }
 }
