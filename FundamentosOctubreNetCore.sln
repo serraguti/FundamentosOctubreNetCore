@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectoClases", "ProyectoC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdoNet", "AdoNet\AdoNet.csproj", "{9DE6A02D-B9D4-4763-96C4-3CDC7C66DB1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEF", "NetCoreEF\NetCoreEF.csproj", "{37005E4B-70B5-45CA-A623-65E35696EE54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEF", "NetCoreEF\NetCoreEF.csproj", "{37005E4B-70B5-45CA-A623-65E35696EE54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreEFFinal", "NetCoreEFFinal\NetCoreEFFinal.csproj", "{E9D71E5C-24A2-454F-B3F7-5628C137E0EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{37005E4B-70B5-45CA-A623-65E35696EE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37005E4B-70B5-45CA-A623-65E35696EE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37005E4B-70B5-45CA-A623-65E35696EE54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D71E5C-24A2-454F-B3F7-5628C137E0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D71E5C-24A2-454F-B3F7-5628C137E0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D71E5C-24A2-454F-B3F7-5628C137E0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D71E5C-24A2-454F-B3F7-5628C137E0EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
