@@ -32,12 +32,12 @@
             lstHospitales = new ListBox();
             label2 = new Label();
             lsvDoctores = new ListView();
-            label3 = new Label();
-            txtIncrementoSalarial = new TextBox();
-            btnIncrementarSalarios = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            label3 = new Label();
+            txtIncrementoSalarial = new TextBox();
+            btnIncrementarSalarios = new Button();
             SuspendLayout();
             // 
             // label1
@@ -57,6 +57,7 @@
             lstHospitales.Name = "lstHospitales";
             lstHospitales.Size = new Size(273, 334);
             lstHospitales.TabIndex = 1;
+            lstHospitales.SelectedIndexChanged += lstHospitales_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -77,6 +78,21 @@
             lsvDoctores.TabIndex = 3;
             lsvDoctores.UseCompatibleStateImageBehavior = false;
             lsvDoctores.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Apellido";
+            columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Especialidad";
+            columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Salario";
+            columnHeader3.Width = 150;
             // 
             // label3
             // 
@@ -102,21 +118,7 @@
             btnIncrementarSalarios.TabIndex = 6;
             btnIncrementarSalarios.Text = "Incrementar salarios";
             btnIncrementarSalarios.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Apellido";
-            columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Especialidad";
-            columnHeader2.Width = 200;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Salario";
-            columnHeader3.Width = 150;
+            btnIncrementarSalarios.Click += btnIncrementarSalarios_Click;
             // 
             // Form02HospitalesDoctores
             // 

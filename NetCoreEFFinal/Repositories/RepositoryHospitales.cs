@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using NetCoreEFFinal.Data;
 using NetCoreEFFinal.Models;
 using System;
@@ -26,6 +27,28 @@ namespace NetCoreEFFinal.Repositories
                            select datos;
             return await consulta.ToListAsync();
         }
+
+        public async Task<List<Doctor>> GetDoctoresHospitalAsync(int idhospital) 
+        {
+            var consulta = from datos in this.context.Doctores
+                           where datos.IdHospital == idhospital
+                           select datos;
+            return await consulta.ToListAsync();
+        }
+
+        public async Task IncrementarSalarioDoctoresHospitalAsync(int idhospital, int incremento)
+        {
+            //BUSCAMOS LOS DOCTORES A MODIFICAR
+            List<Doctor> doctores = await this.GetDoctoresHospitalAsync(idhospital);
+            //RECORREMOS CADA DOCTOR Y MODIFICAMOS SU SALARIO
+            foreach (Doctor doc in doctores)
+            {
+                doc.Salario = doc.Salario + incremento;
+            }
+            //GUARDAMOS LOS CAMBIOS EN BBDD
+            await this.context.SaveChangesAsync();
+        }
+
 
         public async Task<Hospital> FindHospitalAsync(int idhospital)
         {
