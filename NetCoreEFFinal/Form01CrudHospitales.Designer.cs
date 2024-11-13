@@ -30,6 +30,11 @@
         {
             label1 = new Label();
             lsvHospitales = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
             label2 = new Label();
             txtIdHospital = new TextBox();
             label3 = new Label();
@@ -43,11 +48,6 @@
             btnInsertar = new Button();
             btnEliminar = new Button();
             btnModificar = new Button();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -69,6 +69,31 @@
             lsvHospitales.TabIndex = 1;
             lsvHospitales.UseCompatibleStateImageBehavior = false;
             lsvHospitales.View = View.Details;
+            lsvHospitales.SelectedIndexChanged += lsvHospitales_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Id";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Nombre";
+            columnHeader2.Width = 170;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Dirección";
+            columnHeader3.Width = 200;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Teléfono";
+            columnHeader4.Width = 140;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Camas";
+            columnHeader5.Width = 120;
             // 
             // label2
             // 
@@ -158,6 +183,7 @@
             btnInsertar.TabIndex = 12;
             btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.Click += btnInsertar_Click;
             // 
             // btnEliminar
             // 
@@ -167,6 +193,7 @@
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -176,30 +203,7 @@
             btnModificar.TabIndex = 14;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Id";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Nombre";
-            columnHeader2.Width = 170;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Dirección";
-            columnHeader3.Width = 200;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Teléfono";
-            columnHeader4.Width = 140;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Camas";
-            columnHeader5.Width = 120;
+            btnModificar.Click += btnModificar_Click;
             // 
             // Form01CrudHospitales
             // 

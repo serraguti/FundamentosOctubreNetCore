@@ -34,7 +34,7 @@ namespace NetCoreEFFinal
                 (options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
 
-            Application.Run(new Form1());
+            Application.Run(new Form01CrudHospitales());
         }
     }
 }
