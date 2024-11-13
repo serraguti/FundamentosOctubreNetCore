@@ -24,7 +24,8 @@ namespace NetCoreEFFinal
             builder.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true);
             IConfigurationRoot configuration = builder.Build();
-            string connectionString = configuration.GetConnectionString("HospitalSQLServer");
+            //string connectionString = configuration.GetConnectionString("HospitalSQLServer");
+            string connectionString = configuration.GetConnectionString("HospitalMySql");
 
             //INYECTAMOS LAS CLASES NECESARIAS PARA LOS FORMULARIOS Y TAMBIEN PARA
             //ENTITY FRAMEWORK
