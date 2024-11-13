@@ -39,7 +39,7 @@ namespace NetCoreEFFinal
                 //, ServerVersion.AutoDetect(connectionString)))
                 .BuildServiceProvider();
 
-            Application.Run(new Form01CrudHospitales());
+            Application.Run(new Form02HospitalesDoctores());
         }
     }
 }
