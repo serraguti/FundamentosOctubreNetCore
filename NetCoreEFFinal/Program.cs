@@ -31,7 +31,8 @@ namespace NetCoreEFFinal
             Provider = new ServiceCollection()
                 .AddTransient<RepositoryHospitales>()
                 .AddDbContext<HospitalContext>
-                (options => options.UseSqlServer(connectionString))
+                (options => options.UseMySql(connectionString
+                , ServerVersion.AutoDetect(connectionString)))
                 .BuildServiceProvider();
 
             Application.Run(new Form01CrudHospitales());
