@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -72,6 +73,50 @@ namespace ServiciosApiCliente.Services
                 {
                     Doctor doctor = await response.Content.ReadAsAsync<Doctor>();
                     return doctor;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<List<string>> GetEspecialidadesAsync()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.Header);
+                string request = "api/doctores/especialidades";
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<string> especialidades = await response.Content.ReadAsAsync<List<string>>();
+                    return especialidades;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<List<Doctor>> GetDoctoresEspecialidadAsync(string especialidad)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.Header);
+                string request = "api/doctores/doctoresespecialidad/" + especialidad;
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Doctor> doctores = await response.Content.ReadAsAsync<List<Doctor>>();
+                    return doctores;
                 }
                 else
                 {
