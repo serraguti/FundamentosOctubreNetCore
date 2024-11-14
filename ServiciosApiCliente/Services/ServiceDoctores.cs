@@ -57,5 +57,27 @@ namespace ServiciosApiCliente.Services
                 }
             }
         }
+
+        public async Task<Doctor> FindDoctorAsync(int iddoctor)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.Header);
+                string request = "api/doctores/" + iddoctor;
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    Doctor doctor = await response.Content.ReadAsAsync<Doctor>();
+                    return doctor;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }
